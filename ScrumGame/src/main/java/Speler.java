@@ -1,3 +1,5 @@
 public class Speler {
-    String status;
+    public void getStatus() {
+        System.out.println("speler status");
+    }
 }

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class MeerkeuzeVraag extends Vragen {
+public class MeerkeuzeVraag extends Vraag {
     private ArrayList <String> antwoordOpties;
 
 
