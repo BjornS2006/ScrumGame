@@ -5,6 +5,11 @@ public class Kamer {
     private ArrayList <Vraag> Vragen;
 
 
+    public void enter () {
+        System.out.println("Welkom in de eerste kamer.");
+    }
+
+
 
 
 }
