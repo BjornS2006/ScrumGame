@@ -14,8 +14,8 @@ public class Main {
                 speler.getStatus();
             }
             if (input.equalsIgnoreCase("ga naar kamer 1")) {
-                Kamer kamer1 = new Kamer();
-                kamer1.enter();
+                //Kamer kamer1 = new Kamer();
+                //kamer1.enter();
             }
         }
     }
