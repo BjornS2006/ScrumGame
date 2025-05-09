@@ -1,5 +1,7 @@
 package Kamers;
 
+import GameLogic.Game;
+
 import java.util.Scanner;
 
 public class DeSprintRetrospective extends Kamer {
@@ -28,7 +30,7 @@ public class DeSprintRetrospective extends Kamer {
     }
 
     @Override
-    public void naarVolgendeKamer() {
-
+    public void naarVolgendeKamer(Scanner scanner) {
+        Game.maakLaatsteKamerAan().speelKamer(scanner);
     }
 }

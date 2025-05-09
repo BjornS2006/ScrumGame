@@ -1,5 +1,7 @@
 package Kamers;
 
+import GameLogic.Game;
+
 import java.util.Scanner;
 
 public class HetScrumBoard extends Kamer {
@@ -26,7 +28,7 @@ public class HetScrumBoard extends Kamer {
     }
 
     @Override
-    public void naarVolgendeKamer() {
-
+    public void naarVolgendeKamer(Scanner scanner) {
+        Game.maakVierdeKamerAan().speelKamer(scanner);
     }
 }

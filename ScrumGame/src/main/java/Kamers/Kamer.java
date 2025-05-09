@@ -18,11 +18,11 @@ public abstract class Kamer {
         enter();
         stelVraag();
         vraagAntwoord(scanner);
-        naarVolgendeKamer();
+        naarVolgendeKamer(scanner);
     }
 
     public abstract void enter ();
     public abstract void stelVraag();
     public abstract void vraagAntwoord(Scanner scanner);
-    public abstract void naarVolgendeKamer();
+    public abstract void naarVolgendeKamer(Scanner scanner);
 }

@@ -27,7 +27,7 @@ public class Finale extends Kamer {
     }
 
     @Override
-    public void naarVolgendeKamer() {
-
+    public void naarVolgendeKamer(Scanner scanner) {
+        System.out.println("Je hebt het spel uitgespeeld!");
     }
 }
