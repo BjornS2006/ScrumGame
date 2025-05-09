@@ -1,8 +1,13 @@
 package GameLogic;
 
-public class PuzzelVraag extends Vraag {
+public class PuzzelVraag implements VraagType {
     @Override
-    protected void checkGoedAntwoord() {
+    public void stelVraag() {
+
+    }
+
+    @Override
+    public void checkGoedAntwoord() {
 
     }
 }

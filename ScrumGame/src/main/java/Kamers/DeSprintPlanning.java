@@ -8,10 +8,25 @@ public class DeSprintPlanning extends Kamer {
         super("De Sprint Planning");
     }
 
-    public void enter (Scanner scanner) {
+    @Override
+    public void enter() {
         System.out.println("Welkom in de eerste kamer.");
         System.out.println("Deze kamer gaat over De Sprint Planning");
         System.out.println("Beantwoord de volgende vraag:");
+    }
+
+    @Override
+    public void stelVraag() {
+
+    }
+
+    @Override
+    public void vraagAntwoord(Scanner scanner) {
+
+    }
+
+    @Override
+    public void naarVolgendeKamer() {
 
     }
 }

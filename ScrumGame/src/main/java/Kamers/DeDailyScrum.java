@@ -8,9 +8,25 @@ public class DeDailyScrum extends Kamer {
         super("De Daily Scrum");
     }
 
-    public void enter (Scanner scanner) {
+    @Override
+    public void enter() {
         System.out.println("Welkom in de 2de kamer.");
         System.out.println("Deze kamer gaat over De Daily Scrum");
         System.out.println("Beantwoord de volgende vraag:");
+    }
+
+    @Override
+    public void stelVraag() {
+
+    }
+
+    @Override
+    public void vraagAntwoord(Scanner scanner) {
+
+    }
+
+    @Override
+    public void naarVolgendeKamer() {
+
     }
 }

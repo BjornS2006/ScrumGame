@@ -1,8 +1,13 @@
 package GameLogic;
 
-public class MeerkeuzeVraag extends Vraag {
+public class MeerkeuzeVraag implements VraagType {
     @Override
-    protected void checkGoedAntwoord() {
+    public void stelVraag() {
+
+    }
+
+    @Override
+    public void checkGoedAntwoord() {
 
     }
 }

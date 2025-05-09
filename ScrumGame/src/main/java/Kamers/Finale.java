@@ -8,9 +8,26 @@ public class Finale extends Kamer {
         super("Finale");
     }
 
-    public void enter (Scanner scanner) {
+
+    @Override
+    public void enter() {
         System.out.println("Welkom in la grande finale.\uD83D\uDC12");
         System.out.println("Deze kamer gaat over waarom hebben we scrum nodig?");
         System.out.println("Beantwoord de volgende vraag:");
+    }
+
+    @Override
+    public void stelVraag() {
+
+    }
+
+    @Override
+    public void vraagAntwoord(Scanner scanner) {
+
+    }
+
+    @Override
+    public void naarVolgendeKamer() {
+
     }
 }
