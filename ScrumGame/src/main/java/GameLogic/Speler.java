@@ -4,7 +4,7 @@ import java.util.List;
 public class Speler {
     private int score;
     private String positie;
-    private List<String> vragenGeschiedenis; //naam kan better vertel me wel als je het verandert
+    private List<String> vragenGeschiedenis; //naam kan beter vertel me wel als je het verandert
 
     public void getStatus() {
         System.out.println("Speler status:");
