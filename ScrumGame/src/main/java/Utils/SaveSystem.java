@@ -15,6 +15,10 @@ public class SaveSystem {
     private static final String FILE_PATH = "Save.json";
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
+
+    public static void main(String[] args) {
+        createDefaultSpeler();
+    }
     // Save the Speler to a JSON file
     public static void saveGame(Speler speler) {
         try (Writer writer = new FileWriter(FILE_PATH)) {

@@ -18,14 +18,10 @@ public class DeSprintReview extends Kamer {
     }
 
     @Override
-    public void stelVraag() {
+    public void stelVraag(Scanner scanner) {
 
     }
 
-    @Override
-    public void vraagAntwoord(Scanner scanner) {
-
-    }
 
     @Override
     public void naarVolgendeKamer(Scanner scanner) {

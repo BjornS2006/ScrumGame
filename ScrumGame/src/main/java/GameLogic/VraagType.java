@@ -1,7 +1,9 @@
 package GameLogic;
 
+import java.util.Scanner;
+
 public interface VraagType {
     void stelVraag();
-    void checkGoedAntwoord();
-    String getVraagNnaam();
+    void checkGoedAntwoord(Scanner scanner);
+    String getVraagNaam();
 }

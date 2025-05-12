@@ -1,5 +1,6 @@
 package GameLogic;
 
+import java.util.Scanner;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -35,15 +36,17 @@ public class MeerkeuzeVraag implements VraagType {
     }
 
     @Override
-    public void checkGoedAntwoord(String input) {
-        String goedAntwoord = antwoordMogelijkheden.get(antwoord);
-        String[] delen = goedAntwoord.split(":");
-        String goedeLetter = delen[0];
+    public void checkGoedAntwoord() {
 
         if (input.toUpperCase().equals(goedeLetter)){
             System.out.println("goed");
         }else {
             monster.monsterVerschijnt();
         }
+    }
+
+    @Override
+    public String getVraagNaam() {
+        return "";
     }
 }

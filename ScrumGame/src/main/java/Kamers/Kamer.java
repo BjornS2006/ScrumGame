@@ -16,13 +16,11 @@ public abstract class Kamer {
 
     public void speelKamer(Scanner scanner) {
         enter();
-        stelVraag();
-        vraagAntwoord(scanner);
+        stelVraag(scanner);
         naarVolgendeKamer(scanner);
     }
 
     public abstract void enter ();
-    public abstract void stelVraag();
-    public abstract void vraagAntwoord(Scanner scanner);
+    public abstract void stelVraag(Scanner scanner);
     public abstract void naarVolgendeKamer(Scanner scanner);
 }

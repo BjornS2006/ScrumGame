@@ -1,6 +1,7 @@
 package Kamers;
 
 import GameLogic.Game;
+import GameLogic.VraagType;
 
 import java.util.Scanner;
 
@@ -18,14 +19,13 @@ public class DeDailyScrum extends Kamer {
     }
 
     @Override
-    public void stelVraag() {
-
+    public void stelVraag(Scanner scanner) {
+        for (VraagType vraag : vragen) {
+            vraag.stelVraag();
+        }
     }
 
-    @Override
-    public void vraagAntwoord(Scanner scanner) {
 
-    }
 
     @Override
     public void naarVolgendeKamer(Scanner scanner) {
