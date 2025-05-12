@@ -39,6 +39,6 @@ public class SaveSystem {
 
     // Als er nog geen gegevens zijn
     private static Speler createDefaultSpeler() {
-        return new Speler(0, "Startlocatie", new ArrayList<>());
+        return new Speler(0, "Startlocatie");
     }
 }

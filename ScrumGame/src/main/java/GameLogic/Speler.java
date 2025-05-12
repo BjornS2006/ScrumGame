@@ -1,10 +1,17 @@
 package GameLogic;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Speler {
     private int score;
     private String positie;
     private List<String> vragenGeschiedenis; //naam kan beter vertel me wel als je het verandert
+
+    public Speler (int score, String positie) {
+        this.score = score;
+        this.positie = positie;
+        this.vragenGeschiedenis = new ArrayList<>();
+    }
 
     public void getStatus() {
         System.out.println("Speler status:");
