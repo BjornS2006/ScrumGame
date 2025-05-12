@@ -16,7 +16,10 @@ public class Monster {
     public Monster(String naam) {
         this.naam = naam;
     }
-        //Als de vraag fout is dan komt de monster te voorschijn
+        //Als de vraag fout is dan komt de monster te voorschijn.
+        //Dit moet in de andere klasssen aangeroepen worden.
+
+
         public void monsterVerschijnt () {
             System.out.println("KIJK UIT, DE "  + naam + " VERSCHIJNT!!");
         }
@@ -32,14 +35,17 @@ public class Monster {
             else {
                 int secondChanceVragen = random.nextInt(extraVragen.length);
                 Scanner scanner = new Scanner(System.in);
-                String vraag =
+                String vraag = extraVragen[secondChanceVragen][0];
+                String correcteAntwoord = extraVragen[secondChanceVragen][1];
+
+                System.out.println(naam + ": Hier is een nieuwe vraag " + vraag);
                 String Antwoord = scanner.nextLine();
-                if(Antwoord.equalsIgnoreCase("ScrumMaster")) {
+                if(Antwoord.equalsIgnoreCase(correcteAntwoord)) {
                     System.out.println(naam + ": Dat is de goede antwoord je kan verder gaan");
                 }
                 else {
                     System.out.println(naam + ": Je hebt de vraag helaas fout, we zullen wat langer met elkaar opgesch je zul nog een vraag van mij moeten beantworden");
-                    //zoalng de monster in de weg staat kan de gebruiker niet verder(Dit stuk code moet toegevoegd worden)
+                    monsterChallenge();
                 }
                 scanner.close();
             }
