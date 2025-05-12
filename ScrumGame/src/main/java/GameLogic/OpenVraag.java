@@ -1,5 +1,7 @@
 package GameLogic;
 
+import java.util.Scanner;
+
 public class OpenVraag implements VraagType {
     private String vraagNaam;
 
@@ -19,7 +21,7 @@ public class OpenVraag implements VraagType {
     }
 
     @Override
-    public void checkGoedAntwoord() {
+    public void checkGoedAntwoord(Scanner scanner) {
 
     }
 }
