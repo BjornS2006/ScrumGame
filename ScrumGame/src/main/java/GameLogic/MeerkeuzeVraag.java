@@ -1,14 +1,11 @@
 package GameLogic;
 
 import java.util.Scanner;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class MeerkeuzeVraag implements VraagType {
     private String vraagNaam;
     private int antwoord;
-    Scanner scanner = new Scanner(System.in);
     private ArrayList <String> antwoordMogelijkheden;
     private Monster monster;
 
@@ -19,10 +16,6 @@ public class MeerkeuzeVraag implements VraagType {
         this.vraagNaam = vraagNaam;
     }
 
-    @Override
-    public String getVraagNnaam() {
-        return vraagNaam;
-    }
 
 
     @Override
@@ -31,13 +24,15 @@ public class MeerkeuzeVraag implements VraagType {
         for (int i = 0; i < antwoordMogelijkheden.size (); i++) {
             System.out.println(antwoordMogelijkheden.get(i));
         }
-        String input = scanner.nextLine();
-        checkGoedAntwoord(input);
+
     }
 
     @Override
-    public void checkGoedAntwoord() {
-
+    public void checkGoedAntwoord(Scanner scanner) {
+        String goedAntwoord = antwoordMogelijkheden.get(antwoord);
+        String[] delen = goedAntwoord.split(":");
+        String goedeLetter = delen[0];
+        String input = scanner.nextLine();
         if (input.toUpperCase().equals(goedeLetter)){
             System.out.println("goed");
         }else {

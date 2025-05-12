@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class OpenVraag implements VraagType {
     private String vraagNaam;
     private String antwoord;
-    Scanner scanner = new Scanner(System.in);
     private Monster monster;
 
     public OpenVraag(GameLogic.Monster monster, String antwoord, String vraagNaam) {
@@ -22,12 +21,11 @@ public class OpenVraag implements VraagType {
     @Override
     public void stelVraag() {
         System.out.println(vraagNaam);
-        String input = scanner.nextLine();
-        checkGoedAntwoord(input);
     }
 
     @Override
-    public void checkGoedAntwoord(String input) {
+    public void checkGoedAntwoord(Scanner scanner) {
+        String input = scanner.nextLine();
         if (input.equals(antwoord)) {
             System.out.println("Vraag goed!");
         } else {
