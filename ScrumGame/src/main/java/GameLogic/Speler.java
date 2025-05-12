@@ -39,4 +39,5 @@ public class Speler {
     public void setVragenGeschiedenis(java.util.List<String> vragenGeschiedenis) {
         this.vragenGeschiedenis = vragenGeschiedenis;
     }
+    public List<>
 }

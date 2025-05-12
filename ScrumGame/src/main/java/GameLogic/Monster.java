@@ -18,7 +18,7 @@ public class Monster {
     }
         //Als de vraag fout is dan komt de monster te voorschijn
         public void monsterVerschijnt () {
-            System.out.println("KIJK UIT, DE"  + naam + " VERSCHIJNT!!");
+            System.out.println("KIJK UIT, DE "  + naam + " VERSCHIJNT!!");
         }
         public void monsterChallenge() {
             Random random = new Random();
@@ -30,8 +30,9 @@ public class Monster {
                 //hiermee corrigeert de monster de gebruiker(Code is nog niet af)
             }
             else {
-                System.out.println(naam + "Hier is een nieuwe vraag: Wie leid scrum-meetings binnen een sprint");
+                int secondChanceVragen = random.nextInt(extraVragen.length);
                 Scanner scanner = new Scanner(System.in);
+                String vraag =
                 String Antwoord = scanner.nextLine();
                 if(Antwoord.equalsIgnoreCase("ScrumMaster")) {
                     System.out.println(naam + ": Dat is de goede antwoord je kan verder gaan");
