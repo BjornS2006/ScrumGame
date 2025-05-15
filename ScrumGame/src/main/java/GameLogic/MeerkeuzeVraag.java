@@ -37,11 +37,17 @@ public class MeerkeuzeVraag implements VraagType {
             System.out.println("goed");
         }else {
             monster.monsterVerschijnt();
+            monster.monsterChallenge();
         }
     }
 
     @Override
     public String getVraagNaam() {
+        return "";
+    }
+
+    @Override
+    public String getCorrecteAntwoord() {
         return "";
     }
 }

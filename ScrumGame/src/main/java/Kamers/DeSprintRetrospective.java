@@ -1,13 +1,16 @@
 package Kamers;
 
 import GameLogic.Game;
+import GameLogic.VraagType;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DeSprintRetrospective extends Kamer {
 
     public DeSprintRetrospective() {
         super("De Sprint Retrospective");
+        vragen = new ArrayList<>();
     }
 
 
@@ -21,7 +24,12 @@ public class DeSprintRetrospective extends Kamer {
 
     @Override
     public void stelVraag(Scanner scanner) {
-
+        for (VraagType vraag : vragen) {
+            vraag.stelVraag();
+        }
+    }
+    public void addVraag (VraagType vraag) {
+        vragen.add(vraag);
     }
 
 

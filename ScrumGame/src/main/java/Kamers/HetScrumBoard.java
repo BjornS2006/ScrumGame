@@ -1,13 +1,16 @@
 package Kamers;
 
 import GameLogic.Game;
+import GameLogic.VraagType;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HetScrumBoard extends Kamer {
 
     public HetScrumBoard() {
         super("Het Scrum Board");
+        vragen = new ArrayList<>();
     }
 
     @Override
@@ -19,9 +22,13 @@ public class HetScrumBoard extends Kamer {
 
     @Override
     public void stelVraag(Scanner scanner) {
-
+        for (VraagType vraag : vragen) {
+            vraag.stelVraag();
+        }
     }
-
+    public void addVraag (VraagType vraag) {
+        vragen.add(vraag);
+    }
 
 
     @Override

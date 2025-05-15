@@ -1,13 +1,16 @@
 package Kamers;
 
 import GameLogic.Game;
+import GameLogic.VraagType;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DeSprintPlanning extends Kamer {
 
     public DeSprintPlanning() {
         super("De Sprint Planning");
+        vragen = new ArrayList<>();
     }
 
     @Override
@@ -19,7 +22,13 @@ public class DeSprintPlanning extends Kamer {
 
     @Override
     public void stelVraag(Scanner scanner) {
+        for (VraagType vraag : vragen) {
+            vraag.stelVraag();
+        }
 
+    }
+    public void addVraag (VraagType vraag) {
+        vragen.add(vraag);
     }
 
 

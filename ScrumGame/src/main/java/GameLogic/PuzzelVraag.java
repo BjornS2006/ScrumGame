@@ -6,8 +6,9 @@ public class PuzzelVraag implements VraagType {
     private Map<String, String> juisteMatches;
     private List<String> matchItems;
     private List<String> tweedeMatchItems;
+    private Monster monster;
 
-    public PuzzelVraag() {
+    public PuzzelVraag(Monster monster) {
         juisteMatches = new HashMap<>();
         matchItems = new ArrayList<>(juisteMatches.keySet());
         tweedeMatchItems = new ArrayList<>(juisteMatches.values());
@@ -47,6 +48,8 @@ public class PuzzelVraag implements VraagType {
                 System.out.println("Correct!");
             }
             else {
+                monster.monsterVerschijnt();
+                monster.monsterChallenge();
 
             }
         }
@@ -56,6 +59,12 @@ public class PuzzelVraag implements VraagType {
     public String getVraagNaam() {
         return "";
     }
+
+    @Override
+    public String getCorrecteAntwoord() {
+        return "";
+    }
+
     public void addItem (String item) {
         matchItems.add(item);
     }

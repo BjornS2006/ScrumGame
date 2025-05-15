@@ -19,6 +19,11 @@ public class OpenVraag implements VraagType {
     }
 
     @Override
+    public String getCorrecteAntwoord() {
+        return "";
+    }
+
+    @Override
     public void stelVraag() {
         System.out.println(vraagNaam);
     }
@@ -30,6 +35,7 @@ public class OpenVraag implements VraagType {
             System.out.println("Vraag goed!");
         } else {
             monster.monsterVerschijnt();
+            monster.monsterChallenge();
         }
     }
 }

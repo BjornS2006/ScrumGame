@@ -2,44 +2,14 @@ package GameLogic;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Speler {
-    private int score;
-    private String positie;
-    private List<String> vragenGeschiedenis; //naam kan beter vertel me wel als je het verandert
+    public class Speler {
+        private Status status;
 
-    public Speler (int score, String positie) {
-        this.score = score;
-        this.positie = positie;
-        this.vragenGeschiedenis = new ArrayList<>();
-    }
+        public Speler (Status status) {
+            this.status = status;
+        }
 
-    public void getStatus() {
-        System.out.println("Speler status:");
-        System.out.println("Score: " + score);
-        System.out.println("Positie: " + score);
-    }
-
-    public int getScore() {
-        return score;
-    }
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public String getPositie() {
-        return positie;
-    }
-    public void setPositie(String positie) {
-        this.positie = positie;
-    }
-
-    public List<String> getVragenGeschiedenis(){
-        return vragenGeschiedenis;
-    }
-    public void setVragenGeschiedenis(java.util.List<String> vragenGeschiedenis) {
-        this.vragenGeschiedenis = vragenGeschiedenis;
-    }
-    public void addVragenGeschiedenis(java.util.List<String> vragenGeschiedenis) {
-        this.vragenGeschiedenis += vragenGeschiedenis;
-    }
+        public Status getStatus () {
+            return status;
+        }
 }
