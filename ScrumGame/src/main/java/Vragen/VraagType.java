@@ -1,4 +1,4 @@
-package GameLogic;
+package Vragen;
 
 import java.util.Scanner;
 

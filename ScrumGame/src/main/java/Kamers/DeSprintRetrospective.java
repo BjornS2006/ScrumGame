@@ -1,7 +1,7 @@
 package Kamers;
 
 import GameLogic.Game;
-import GameLogic.VraagType;
+import Vragen.VraagType;
 
 import java.util.ArrayList;
 import java.util.Scanner;

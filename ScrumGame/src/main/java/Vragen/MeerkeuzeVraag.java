@@ -1,4 +1,6 @@
-package GameLogic;
+package Vragen;
+
+import Monster.Monster;
 
 import java.util.Scanner;
 import java.util.ArrayList;

@@ -1,4 +1,6 @@
-package GameLogic;
+package Vragen;
+
+import Monster.Monster;
 
 import java.util.Scanner;
 
@@ -7,7 +9,7 @@ public class OpenVraag implements VraagType {
     private String antwoord;
     private Monster monster;
 
-    public OpenVraag(GameLogic.Monster monster, String antwoord, String vraagNaam) {
+    public OpenVraag(Monster monster, String antwoord, String vraagNaam) {
         this.monster = monster;
         this.antwoord = antwoord;
         this.vraagNaam = vraagNaam;
