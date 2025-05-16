@@ -33,14 +33,18 @@ public class SaveSystem {
         File file = new File(FILE_PATH);
 
         if (!file.exists()) {
-            return createDefaultSpeler();
+            saveGame(createDefaultSpeler());
+            return;
         }
 
         try (Reader reader = new FileReader(file)) {
-            return gson.fromJson(reader, Speler.class);
+            Speler savedSpeler = gson.fromJson(reader, Speler.class);
+            speler.setId(savedSpeler.getId());
+            speler.setLocatie(savedSpeler.getLocatie());
+            speler.setVragenGeschiedenis(savedSpeler.getVragenGeschiedenis());
         } catch (IOException e) {
             e.printStackTrace();
-            return createDefaultSpeler();
+            saveGame(createDefaultSpeler());
         }
     }
 //als er geen save file is word er een nieuwe speler aa gemaakt
