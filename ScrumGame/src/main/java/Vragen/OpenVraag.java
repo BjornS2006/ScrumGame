@@ -1,16 +1,17 @@
 package Vragen;
 
 import Monster.Monster;
+import Monster.MonsterActie;
 
 import java.util.Scanner;
 
 public class OpenVraag implements VraagType {
     private String vraagNaam;
     private String antwoord;
-    private Monster monster;
+    private MonsterActie monsterActie;
 
-    public OpenVraag(Monster monster, String antwoord, String vraagNaam) {
-        this.monster = monster;
+    public OpenVraag(MonsterActie monsterActie, String antwoord, String vraagNaam) {
+        this.monsterActie = monsterActie;
         this.antwoord = antwoord;
         this.vraagNaam = vraagNaam;
     }
@@ -36,8 +37,7 @@ public class OpenVraag implements VraagType {
         if (input.equals(antwoord)) {
             System.out.println("Vraag goed!");
         } else {
-            monster.monsterVerschijnt();
-            monster.monsterChallenge();
+            monsterActie.uitvoeren();
         }
     }
 }

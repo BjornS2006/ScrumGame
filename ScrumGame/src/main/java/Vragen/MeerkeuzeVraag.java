@@ -1,6 +1,7 @@
 package Vragen;
 
 import Monster.Monster;
+import Monster.MonsterActie;
 
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -9,10 +10,10 @@ public class MeerkeuzeVraag implements VraagType {
     private String vraagNaam;
     private int antwoord;
     private ArrayList <String> antwoordMogelijkheden;
-    private Monster monster;
+    private MonsterActie monsterActie;
 
-    public MeerkeuzeVraag(Monster monster, ArrayList<String> antwoordMogelijkheden, int antwoord, String vraagNaam) {
-        this.monster = monster;
+    public MeerkeuzeVraag(MonsterActie monsteractie, ArrayList<String> antwoordMogelijkheden, int antwoord, String vraagNaam) {
+        this.monsterActie = monsterActie;
         this.antwoordMogelijkheden = antwoordMogelijkheden;
         this.antwoord = antwoord;
         this.vraagNaam = vraagNaam;
@@ -38,8 +39,7 @@ public class MeerkeuzeVraag implements VraagType {
         if (input.toUpperCase().equals(goedeLetter)){
             System.out.println("goed");
         }else {
-            monster.monsterVerschijnt();
-            monster.monsterChallenge();
+            monsterActie.uitvoeren();
         }
     }
 

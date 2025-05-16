@@ -1,6 +1,7 @@
 package Vragen;
 
 import Monster.Monster;
+import Monster.MonsterActie;
 
 import java.util.*;
 
@@ -8,9 +9,10 @@ public class PuzzelVraag implements VraagType {
     private Map<String, String> juisteMatches;
     private List<String> matchItems;
     private List<String> tweedeMatchItems;
-    private Monster monster;
+    private MonsterActie monsterActie;
 
-    public PuzzelVraag(Monster monster) {
+    public PuzzelVraag(MonsterActie monsterActie) {
+        this.monsterActie = monsterActie;
         juisteMatches = new HashMap<>();
         matchItems = new ArrayList<>(juisteMatches.keySet());
         tweedeMatchItems = new ArrayList<>(juisteMatches.values());
@@ -50,8 +52,7 @@ public class PuzzelVraag implements VraagType {
                 System.out.println("Correct!");
             }
             else {
-                monster.monsterVerschijnt();
-                monster.monsterChallenge();
+                monsterActie.uitvoeren();
 
             }
         }

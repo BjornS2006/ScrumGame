@@ -14,7 +14,7 @@ public class Game {
         antwoordmogelijkheden.add("A: 5");
         antwoordmogelijkheden.add("B: 38");
         antwoordmogelijkheden.add("C: 93");
-        MeerkeuzeVraag meerkeuzeVraag = new MeerkeuzeVraag(monster,antwoordmogelijkheden, 2, "Wat is 90 plus 3?" );
+        MeerkeuzeVraag meerkeuzeVraag = new MeerkeuzeVraag(monsterActie,antwoordmogelijkheden, 2, "Wat is 90 plus 3?" );
         kamer1.addVraag(meerkeuzeVraag);
         return kamer1;
     }
