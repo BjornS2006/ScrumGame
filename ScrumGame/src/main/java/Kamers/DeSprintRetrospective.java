@@ -7,10 +7,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DeSprintRetrospective extends Kamer {
+    private KamerVraagPresenter vraagPresenter;
+    private KamerVraagManager vraagManager;
 
     public DeSprintRetrospective() {
         super("De Sprint Retrospective");
-        vragen = new ArrayList<>();
+        vraagManager = new KamerVraagManager();
+        vraagPresenter = new KamerVraagPresenter();
     }
 
 
@@ -24,12 +27,10 @@ public class DeSprintRetrospective extends Kamer {
 
     @Override
     public void stelVraag(Scanner scanner) {
-        for (VraagType vraag : vragen) {
-            vraag.stelVraag();
-        }
+        vraagPresenter.stelVragen(vraagManager, scanner);
     }
     public void addVraag (VraagType vraag) {
-        vragen.add(vraag);
+        vraagManager.addVraag(vraag);
     }
 
 

@@ -7,10 +7,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DeSprintPlanning extends Kamer {
+    private KamerVraagManager vraagManager;
+    private KamerVraagPresenter vraagPresenter;
 
     public DeSprintPlanning() {
         super("De Sprint Planning");
-        vragen = new ArrayList<>();
+        vraagManager = new KamerVraagManager();
+        vraagPresenter = new KamerVraagPresenter();
     }
 
     @Override
@@ -22,13 +25,10 @@ public class DeSprintPlanning extends Kamer {
 
     @Override
     public void stelVraag(Scanner scanner) {
-        for (VraagType vraag : vragen) {
-            vraag.stelVraag();
-        }
-
+        vraagPresenter.stelVragen(vraagManager, scanner);
     }
     public void addVraag (VraagType vraag) {
-        vragen.add(vraag);
+        vraagManager.addVraag(vraag);
     }
 
 

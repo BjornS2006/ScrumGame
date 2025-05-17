@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 public abstract class Kamer {
     protected String naam;
-    protected ArrayList<VraagType> vragen;
     protected ArrayList<Update> observers;
 
     public Kamer(String name) {
