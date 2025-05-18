@@ -2,7 +2,7 @@ package GameLogic;
 
 import Kamers.*;
 import Monster.Monster;
-import Vragen.MeerkeuzeVraag;
+import Vragen.Vraag;
 
 import java.util.ArrayList;
 
