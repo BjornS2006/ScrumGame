@@ -1,14 +1,12 @@
 package Kamers;
 
 import GameLogic.Game;
-import Vragen.VraagType;
+import Vragen.Vraag;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DeSprintReview extends Kamer {
-    private KamerVraagManager vraagManager;
-    private KamerVraagPresenter vraagPresenter;
 
     public DeSprintReview() {
         super("De Sprint Review");
@@ -27,7 +25,7 @@ public class DeSprintReview extends Kamer {
     public void stelVraag(Scanner scanner) {
         vraagPresenter.stelVragen(vraagManager, scanner);
     }
-    public void addVraag (VraagType vraag) {
+    public void addVraag (Vraag vraag) {
         vraagManager.addVraag(vraag);
     }
 

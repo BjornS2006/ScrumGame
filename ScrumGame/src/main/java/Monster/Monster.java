@@ -1,6 +1,6 @@
 package Monster;
 import GameLogic.Update;
-import Vragen.VraagType;
+import Vragen.Vraag;
 
 import java.util.Scanner;
 import java.util.Random;
@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class Monster implements Update {
     private String naam;
-    private VraagType huidigeVraag;
+    private Vraag huidigeVraag;
     private ArrayList<String> extraVragen;
     private ArrayList<String> antwoorden;
 
@@ -34,7 +34,7 @@ public class Monster implements Update {
         ));
     }
 
-    public void setHuidigeVraag(VraagType vraag) {
+    public void setHuidigeVraag(Vraag vraag) {
         this.huidigeVraag = vraag;
     }
         //Als de vraag fout is dan komt de monster te voorschijn.
@@ -79,6 +79,6 @@ public class Monster implements Update {
         }
 
     @Override
-    public void Update() {
+    public void update() {
     }
 }

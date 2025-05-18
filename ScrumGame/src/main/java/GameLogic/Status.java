@@ -9,7 +9,7 @@ public class Status implements Update {
         this.positie = positie;
     }
     @Override
-    public void Update() {
+    public void update() {
 
     }
 }

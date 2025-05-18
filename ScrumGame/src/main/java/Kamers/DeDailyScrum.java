@@ -1,14 +1,12 @@
 package Kamers;
 
 import GameLogic.Game;
-import Vragen.VraagType;
+import Vragen.Vraag;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DeDailyScrum extends Kamer {
-    private KamerVraagManager vraagManager;
-    private KamerVraagPresenter vraagPresenter;
 
     public DeDailyScrum() {
         super("De Daily Scrum");
@@ -27,10 +25,10 @@ public class DeDailyScrum extends Kamer {
     public void stelVraag(Scanner scanner) {
        vraagPresenter.stelVragen(vraagManager, scanner);
     }
-    public void addVraag (VraagType vraag) {
+
+    public void addVraag (Vraag vraag) {
         vraagManager.addVraag(vraag);
     }
-
 
     @Override
     public void naarVolgendeKamer(Scanner scanner) {
