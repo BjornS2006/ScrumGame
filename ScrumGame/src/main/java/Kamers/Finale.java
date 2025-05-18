@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Finale extends Kamer {
-    private KamerVraagPresenter vraagPresenter;
-    private KamerVraagManager vraagManager;
 
     public Finale() {
         super("Finale");

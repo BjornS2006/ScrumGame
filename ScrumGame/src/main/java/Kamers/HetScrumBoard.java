@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HetScrumBoard extends Kamer {
-    private KamerVraagManager vraagManager;
-    private KamerVraagPresenter vraagPresenter;
 
     public HetScrumBoard() {
         super("Het Scrum Board");

@@ -10,6 +10,8 @@ public abstract class Kamer {
     protected String naam;
     protected ArrayList<Update> observers;
     protected Monster monster;
+    protected KamerVraagManager vraagManager;
+    protected KamerVraagPresenter vraagPresenter;
 
     public Kamer(String name) {
         this.naam = name;

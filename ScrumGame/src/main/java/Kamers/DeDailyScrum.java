@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DeDailyScrum extends Kamer {
-    private KamerVraagManager vraagManager;
-    private KamerVraagPresenter vraagPresenter;
 
     public DeDailyScrum() {
         super("De Daily Scrum");

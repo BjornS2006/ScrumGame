@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DeSprintPlanning extends Kamer {
-    private KamerVraagManager vraagManager;
-    private KamerVraagPresenter vraagPresenter;
 
     public DeSprintPlanning() {
         super("De Sprint Planning");
