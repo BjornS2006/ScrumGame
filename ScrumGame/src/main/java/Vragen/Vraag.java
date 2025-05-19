@@ -1,12 +1,15 @@
 package Vragen;
 
 import GameLogic.Subject;
+import GameLogic.Update;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Vraag {
     private VraagControleStrategie controleStrategie;
     private VraagWeergaveStrategie weergaveStrategie;
+    private ArrayList<Update> observers;
 
     public Vraag (VraagWeergaveStrategie weergaveStrategie, VraagControleStrategie controleStrategie) {
         this.controleStrategie = controleStrategie;

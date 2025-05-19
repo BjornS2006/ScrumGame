@@ -1,10 +1,10 @@
 package Monster;
 
-import Vragen.VraagType;
+import Vragen.Vraag;
 
 public class Monster {
     private String naam;
-    private VraagType huidigeVraag;
+    private Vraag huidigeVraag;
 
     public Monster(String naam) {
         this.naam = naam;
@@ -18,7 +18,7 @@ public class Monster {
         return naam;
     }
 
-    public VraagType getHuidigeVraag() {
+    public Vraag getHuidigeVraag() {
         return huidigeVraag;
     }
 }
