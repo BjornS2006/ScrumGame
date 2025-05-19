@@ -3,9 +3,6 @@ package Kamers;
 import GameLogic.Game;
 import Vragen.Vraag;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class HetScrumBoard extends Kamer {
 
     public HetScrumBoard() {
@@ -22,8 +19,8 @@ public class HetScrumBoard extends Kamer {
     }
 
     @Override
-    public void stelVraag(Scanner scanner) {
-        vraagPresenter.stelVragen(vraagManager, scanner);
+    public void stelVraag() {
+        vraagPresenter.stelVragen(vraagManager);
     }
 
     public void addVraag (Vraag vraag) {
@@ -31,7 +28,7 @@ public class HetScrumBoard extends Kamer {
     }
 
     @Override
-    public void naarVolgendeKamer(Scanner scanner) {
-        Game.maakVierdeKamerAan().speelKamer(scanner);
+    public void naarVolgendeKamer() {
+        Game.maakVierdeKamerAan().speelKamer();
     }
 }

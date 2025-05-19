@@ -1,6 +1,6 @@
 package Vragen;
 
-import java.util.Scanner;
+import Utils.SpelerInputHandler;
 
 public class OpenControle implements VraagControleStrategie {
     private String goedAntwoord;
@@ -10,8 +10,8 @@ public class OpenControle implements VraagControleStrategie {
     }
 
     @Override
-    public boolean checkGoedAntwoord(Scanner scanner) {
-        return AnswerHandler.spelerAntwoord(scanner).trim().equalsIgnoreCase(goedAntwoord);
+    public boolean checkGoedAntwoord() {
+        return SpelerInputHandler.spelerAntwoord().trim().equalsIgnoreCase(goedAntwoord);
     }
 
     @Override

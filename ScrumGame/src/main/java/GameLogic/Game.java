@@ -20,7 +20,7 @@ public class Game {
 
         MeerkeuzeControle controle = new MeerkeuzeControle("C");
 
-        Vraag vraag = new Vraag(weergave, controle);
+        Vraag vraag = new Vraag(weergave, controle, monster);
         kamer1.addVraag(vraag);
 
         return kamer1;
@@ -37,7 +37,7 @@ public class Game {
 
         MeerkeuzeControle controle = new MeerkeuzeControle("B");
 
-        Vraag vraag = new Vraag(weergave, controle);
+        Vraag vraag = new Vraag(weergave, controle, monster);
         kamer2.addVraag(vraag);
 
         return kamer2;
@@ -54,7 +54,7 @@ public class Game {
 
         MeerkeuzeControle controle = new MeerkeuzeControle("B");
 
-        Vraag vraag = new Vraag(weergave, controle);
+        Vraag vraag = new Vraag(weergave, controle, monster);
         kamer3.addVraag(vraag);
 
         return kamer3;
@@ -71,7 +71,7 @@ public class Game {
 
         MeerkeuzeControle controle = new MeerkeuzeControle("B");
 
-        Vraag vraag = new Vraag(weergave, controle);
+        Vraag vraag = new Vraag(weergave, controle, monster);
         kamer4.addVraag(vraag);
 
         return kamer4;
@@ -88,7 +88,7 @@ public class Game {
 
         MeerkeuzeControle controle = new MeerkeuzeControle("A");
 
-        Vraag vraag = new Vraag(weergave, controle);
+        Vraag vraag = new Vraag(weergave, controle, monster);
         kamer5.addVraag(vraag);
 
         return kamer5;
@@ -105,7 +105,7 @@ public class Game {
 
         MeerkeuzeControle controle = new MeerkeuzeControle("B");
 
-        Vraag vraag = new Vraag(weergave, controle);
+        Vraag vraag = new Vraag(weergave, controle, monster);
         kamer6.addVraag(vraag);
 
         return kamer6;

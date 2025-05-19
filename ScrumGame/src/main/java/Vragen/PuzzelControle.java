@@ -1,5 +1,7 @@
 package Vragen;
 
+import Utils.SpelerInputHandler;
+
 import java.util.Scanner;
 
 public class PuzzelControle implements VraagControleStrategie{
@@ -10,8 +12,8 @@ public class PuzzelControle implements VraagControleStrategie{
     }
 
     @Override
-    public boolean checkGoedAntwoord(Scanner scanner) {
-        return AnswerHandler.spelerAntwoord(scanner).trim().equalsIgnoreCase(goedAntwoord);
+    public boolean checkGoedAntwoord() {
+        return SpelerInputHandler.spelerAntwoord().trim().equalsIgnoreCase(goedAntwoord);
     }
     public String getCorrectAntwoord () {
         return goedAntwoord;

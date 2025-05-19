@@ -9,7 +9,9 @@ public class Status implements Update {
         this.positie = positie;
     }
     @Override
-    public void update() {
-
+    public void update(boolean goedOfFout) {
+        if (goedOfFout) {
+            score++; //hoe we dit precies gaan doen moeten we nog ff beslissen
+        }
     }
 }

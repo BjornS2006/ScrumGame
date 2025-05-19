@@ -2,9 +2,6 @@ package Kamers;
 
 import Vragen.Vraag;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class Finale extends Kamer {
 
     public Finale() {
@@ -22,15 +19,15 @@ public class Finale extends Kamer {
     }
 
     @Override
-    public void stelVraag(Scanner scanner) {
-        vraagPresenter.stelVragen(vraagManager, scanner);
+    public void stelVraag() {
+        vraagPresenter.stelVragen(vraagManager);
     }
     public void addVraag (Vraag vraag) {
         vraagManager.addVraag(vraag);
     }
 
     @Override
-    public void naarVolgendeKamer(Scanner scanner) {
+    public void naarVolgendeKamer() {
         System.out.println("Je hebt het spel uitgespeeld!");
     }
 }
