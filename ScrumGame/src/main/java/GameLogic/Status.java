@@ -12,4 +12,10 @@ public class Status implements Update {
     public void update() {
 
     }
+    public int getScore() {
+        return score;
+    }
+    public String getPositie() {
+        return positie;
+    }
 }
