@@ -1,6 +1,7 @@
 package Utils;
 
 import GameLogic.Status;
+import GameLogic.Speler;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.File;
@@ -9,47 +10,51 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
-import java.util.ArrayList;
-import GameLogic.Speler;
 
 public class SaveSystem {
-//    locatie van de save file
+    // Path of the JSON save file.
     private static final String FILE_PATH = "Save.json";
-//    maak een Json object aan met google's Gson
+    // Gson object with pretty printing.
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-
-//opslaan
-    public static void saveGame(Speler speler) {
+    // Save the game by writing the player's status to a JSON file.
+    public static Speler saveGame(Speler speler) {
         try (Writer writer = new FileWriter(FILE_PATH)) {
             gson.toJson(speler, writer);
             System.out.println("Spelergegevens opgeslagen!");
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return speler;
     }
-//het laden van het spell
+
+    // Load the game by reading the player's status from the JSON file.
     public static Speler loadGame() {
         File file = new File(FILE_PATH);
 
         if (!file.exists()) {
-            saveGame(createDefaultSpeler());
-            return;
+            // File doesn't exist: create a default player and save it.
+            Speler defaultSpeler = createDefaultSpeler();
+            saveGame(defaultSpeler);
+            return defaultSpeler;
         }
 
         try (Reader reader = new FileReader(file)) {
+            // Deserialize the JSON to construct a Speler instance,
+            // which automatically sets its status.
             Speler savedSpeler = gson.fromJson(reader, Speler.class);
-            speler.setId(savedSpeler.getId());
-            speler.setLocatie(savedSpeler.getLocatie());
-            speler.setVragenGeschiedenis(savedSpeler.getVragenGeschiedenis());
+            return savedSpeler;
         } catch (IOException e) {
             e.printStackTrace();
-            saveGame(createDefaultSpeler());
+            // In case of error, create, save, and return a default player.
+            Speler defaultSpeler = createDefaultSpeler();
+            saveGame(defaultSpeler);
+            return defaultSpeler;
         }
     }
-//als er geen save file is word er een nieuwe speler aa gemaakt
+
+    // Create a default Speler with a default Status.
     private static Speler createDefaultSpeler() {
-        Speler defaultSpeler = new Speler(new Status(0, "Start"));
-        return defaultSpeler;
+        return new Speler(new Status(0, "Start"));
     }
 }
