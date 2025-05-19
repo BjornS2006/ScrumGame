@@ -10,7 +10,7 @@ public class Monster {
         this.naam = naam;
     }
 
-    public void setHuidigeVraag(VraagType vraag) {
+    public void setHuidigeVraag(Vraag vraag) {
         this.huidigeVraag = vraag;
     }
 

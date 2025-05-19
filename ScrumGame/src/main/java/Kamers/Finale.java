@@ -1,6 +1,6 @@
 package Kamers;
 
-import Vragen.VraagType;
+import Vragen.Vraag;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -9,11 +9,8 @@ public class Finale extends Kamer {
 
     public Finale() {
         super("Finale");
-        vragen = new ArrayList<>();
-    }
-
-    public void addVraag (VraagType vraag) {
-        vragen.add(vraag);
+        vraagManager = new KamerVraagManager();
+        vraagPresenter = new KamerVraagPresenter();
     }
 
 
@@ -26,9 +23,10 @@ public class Finale extends Kamer {
 
     @Override
     public void stelVraag(Scanner scanner) {
-        for (VraagType vraag : vragen) {
-            vraag.stelVraag();
-        }
+        vraagPresenter.stelVragen(vraagManager, scanner);
+    }
+    public void addVraag (Vraag vraag) {
+        vraagManager.addVraag(vraag);
     }
 
     @Override

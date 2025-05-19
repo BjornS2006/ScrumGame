@@ -1,16 +1,17 @@
 package Kamers;
 
 import GameLogic.Update;
-import Vragen.VraagType;
-
+import Monster.Monster;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class Kamer {
     protected String naam;
-    protected ArrayList<VraagType> vragen;
     protected ArrayList<Update> observers;
+    protected Monster monster;
+    protected KamerVraagManager vraagManager;
+    protected KamerVraagPresenter vraagPresenter;
 
     public Kamer(String name) {
         this.naam = name;

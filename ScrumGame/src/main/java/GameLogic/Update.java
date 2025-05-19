@@ -1,6 +1,6 @@
 package GameLogic;
 
 public interface Update {
-    void Update();
+    void update();
 
 }
