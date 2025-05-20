@@ -3,9 +3,6 @@ package Kamers;
 import GameLogic.Game;
 import Vragen.Vraag;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class DeSprintReview extends Kamer {
 
     public DeSprintReview() {
@@ -22,8 +19,8 @@ public class DeSprintReview extends Kamer {
     }
 
     @Override
-    public void stelVraag(Scanner scanner) {
-        vraagPresenter.stelVragen(vraagManager, scanner);
+    public void stelVraag() {
+        vraagPresenter.stelVragen(vraagManager);
     }
     public void addVraag (Vraag vraag) {
         vraagManager.addVraag(vraag);
@@ -31,7 +28,7 @@ public class DeSprintReview extends Kamer {
 
 
     @Override
-    public void naarVolgendeKamer(Scanner scanner) {
-        Game.maakVijfdeKamerAan().speelKamer(scanner);
+    public void naarVolgendeKamer() {
+        Game.maakVijfdeKamerAan().speelKamer();
     }
 }

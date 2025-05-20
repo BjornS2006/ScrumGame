@@ -1,4 +1,6 @@
 package Monster;
+import Utils.SpelerInputHandler;
+
 import java.util.Scanner;
 
 public class MonsterAntwoordControle implements MonsterActie {
@@ -12,10 +14,8 @@ public class MonsterAntwoordControle implements MonsterActie {
 
     @Override
     public void uitvoeren() {
-        try (Scanner scanner = new Scanner(System.in)) { // Zorgt ervoor dat Scanner correct sluit
             System.out.println("Geef je antwoord:");
-            String antwoord = scanner.nextLine();
-
+            String antwoord = SpelerInputHandler.spelerAntwoord();
             if (antwoord.equalsIgnoreCase(correcteAntwoord)) {
                 System.out.println("Correct! Je mag verder gaan.");
             } else {

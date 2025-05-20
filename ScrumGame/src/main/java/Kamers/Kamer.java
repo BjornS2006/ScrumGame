@@ -1,15 +1,9 @@
 package Kamers;
 
-import GameLogic.Update;
-import Monster.Monster;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class Kamer {
     protected String naam;
-    protected ArrayList<Update> observers;
-    protected Monster monster;
     protected KamerVraagManager vraagManager;
     protected KamerVraagPresenter vraagPresenter;
 
@@ -17,13 +11,13 @@ public abstract class Kamer {
         this.naam = name;
     }
 
-    public void speelKamer(Scanner scanner) {
+    public void speelKamer() {
         enter();
-        stelVraag(scanner);
-        naarVolgendeKamer(scanner);
+        stelVraag();
+        naarVolgendeKamer();
     }
 
     public abstract void enter ();
-    public abstract void stelVraag(Scanner scanner);
-    public abstract void naarVolgendeKamer(Scanner scanner);
+    public abstract void stelVraag();
+    public abstract void naarVolgendeKamer();
 }

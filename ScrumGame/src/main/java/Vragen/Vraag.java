@@ -1,30 +1,39 @@
 package Vragen;
 
 import GameLogic.Subject;
+import GameLogic.Update;
+import Monster.Monster;
 
-import java.util.Scanner;
+import java.util.ArrayList;
 
-public class Vraag {
+public class Vraag implements Subject {
     private VraagControleStrategie controleStrategie;
     private VraagWeergaveStrategie weergaveStrategie;
+    private ArrayList<Update> observers;
+    private Monster monster;
 
-    public Vraag (VraagWeergaveStrategie weergaveStrategie, VraagControleStrategie controleStrategie) {
+    public Vraag (VraagWeergaveStrategie weergaveStrategie, VraagControleStrategie controleStrategie, Monster monster) {
         this.controleStrategie = controleStrategie;
         this.weergaveStrategie = weergaveStrategie;
+        observers = new ArrayList<>();
+        this.monster = monster;
     }
     public void stelVraag () {
         weergaveStrategie.toonVraag();
     }
-    public void controleerAntwoord (Scanner scanner) {
-        if (controleStrategie.checkGoedAntwoord(scanner)) {
-            //code voor score ophogen
-        }
-        else {
-            //code voor monster challenge starten
-        }
+    public void controleerAntwoord () {
+        boolean goedOfFout = controleStrategie.checkGoedAntwoord();
+        stuurUpdate(goedOfFout);
     }
 
     public String getCorrecteAntwoord() {
         return controleStrategie.getCorrectAntwoord();
+    }
+
+    @Override
+    public void stuurUpdate(Boolean goedOfFout) {
+        for (Update update : observers) {
+            update.update(goedOfFout);
+        }
     }
 }

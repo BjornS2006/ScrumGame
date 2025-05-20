@@ -1,6 +1,6 @@
 package Vragen;
 
-import java.util.Scanner;
+import Utils.SpelerInputHandler;
 
 public class MeerkeuzeControle implements VraagControleStrategie {
     private String correcteLetter;
@@ -10,8 +10,8 @@ public class MeerkeuzeControle implements VraagControleStrategie {
     }
 
     @Override
-    public boolean checkGoedAntwoord(Scanner scanner) {
-        return AnswerHandler.spelerAntwoord(scanner).trim().equalsIgnoreCase(correcteLetter);
+    public boolean checkGoedAntwoord() {
+        return SpelerInputHandler.spelerAntwoord().trim().equalsIgnoreCase(correcteLetter);
     }
 
     @Override

@@ -3,7 +3,6 @@ package Monster;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class MonsterNieuweVraag implements MonsterActie {
     private MonsterVraagBeheer vraagBeheer;

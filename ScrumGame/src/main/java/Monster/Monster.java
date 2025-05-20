@@ -1,13 +1,16 @@
 package Monster;
 
-import Vragen.VraagType;
+import GameLogic.Update;
+import Vragen.Vraag;
 
-public class Monster {
+public class Monster implements Update {
     private String naam;
-    private VraagType huidigeVraag;
+    private Vraag huidigeVraag;
+    private MonsterChallenge challenge;
 
-    public Monster(String naam) {
+    public Monster(String naam, MonsterChallenge challenge) {
         this.naam = naam;
+        this.challenge = challenge;
     }
 
     public void setHuidigeVraag(Vraag vraag) {
@@ -18,7 +21,15 @@ public class Monster {
         return naam;
     }
 
-    public VraagType getHuidigeVraag() {
+    public Vraag getHuidigeVraag() {
         return huidigeVraag;
     }
+
+    @Override
+    public void update(boolean goedOfFout) {
+        if (!goedOfFout) {
+            challenge.startChallenge();
+        }
+    }
+
 }
