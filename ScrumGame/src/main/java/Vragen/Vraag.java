@@ -1,12 +1,12 @@
 package Vragen;
 
+import GameLogic.Subject;
 import GameLogic.Update;
 import Monster.Monster;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class Vraag {
+public class Vraag implements Subject {
     private VraagControleStrategie controleStrategie;
     private VraagWeergaveStrategie weergaveStrategie;
     private ArrayList<Update> observers;
@@ -23,12 +23,17 @@ public class Vraag {
     }
     public void controleerAntwoord () {
         boolean goedOfFout = controleStrategie.checkGoedAntwoord();
-        for (Update update : observers) {
-            update.update(goedOfFout);
-        }
+        stuurUpdate(goedOfFout);
     }
 
     public String getCorrecteAntwoord() {
         return controleStrategie.getCorrectAntwoord();
+    }
+
+    @Override
+    public void stuurUpdate(Boolean goedOfFout) {
+        for (Update update : observers) {
+            update.update(goedOfFout);
+        }
     }
 }

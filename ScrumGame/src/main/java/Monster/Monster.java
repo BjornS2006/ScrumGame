@@ -27,7 +27,7 @@ public class Monster implements Update {
 
     @Override
     public void update(boolean goedOfFout) {
-        if (goedOfFout) {
+        if (!goedOfFout) {
             challenge.startChallenge();
         }
     }
