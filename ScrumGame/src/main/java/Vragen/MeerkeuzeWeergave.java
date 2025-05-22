@@ -12,6 +12,7 @@ public class MeerkeuzeWeergave implements VraagWeergaveStrategie {
     }
     @Override
     public void toonVraag() {
+        System.out.println(vraag);
         for (String mogelijkheid : antwoordMogelijkheden) {
             System.out.println(mogelijkheid);
         }
