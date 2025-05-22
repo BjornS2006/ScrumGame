@@ -19,3 +19,4 @@ public class MeerkeuzeControle implements VraagControleStrategie {
         return correcteLetter;
     }
 }
+
