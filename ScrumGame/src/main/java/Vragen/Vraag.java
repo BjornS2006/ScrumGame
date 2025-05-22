@@ -36,4 +36,7 @@ public class Vraag implements Subject {
             update.update(goedOfFout);
         }
     }
+    public void addObserver(Update observer) {
+        observers.add(observer);
+    }
 }

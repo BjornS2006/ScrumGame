@@ -4,6 +4,7 @@ import Utils.SaveSystem;
 import Utils.SpelerInputHandler;
 import Utils.SpelerSession;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -20,11 +21,33 @@ public class Main {
 
         while (true) {
             String input = SpelerInputHandler.spelerAntwoord();
-            if (input.isEmpty()) {
-                Game.maakEersteKamerAan().speelKamer();
+
+            switch (SpelerSession.getSpeler().getStatus().getPositie()) {
+                case "Start", "De Sprint Planning":
+                    Game.maakEersteKamerAan().speelKamer();
+                    break;
+                case "De Daily Scrum":
+                    Game.maakTweedeKamerAan().speelKamer();
+                    break;
+                case "Het Scrum Board":
+                    Game.maakDerdeKamerAan().speelKamer();
+                    break;
+                case "De Sprint Review":
+                    Game.maakVierdeKamerAan().speelKamer();
+                    break;
+                case "De Finale":
+                    Game.maakVijfdeKamerAan().speelKamer();
+                    break;
+                default:
+                    // Optioneel: afhandeling voor onbekende posities
+                    System.out.println("Onbekende positie.");
+                    break;
+            }
+
+
 //                alles hier na wordt pass aan het einde van het spel laten zien
             }
         }
     }
-}
+
 

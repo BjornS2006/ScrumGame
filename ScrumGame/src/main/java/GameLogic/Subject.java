@@ -1,5 +1,5 @@
 package GameLogic;
 
 public interface Subject {
-    void stuurUpdate();
+    void stuurUpdate(Boolean goedOfFout);
 }

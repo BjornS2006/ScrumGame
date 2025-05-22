@@ -3,6 +3,7 @@ package GameLogic;
 import Kamers.*;
 import Monster.Monster;
 import Monster.MonsterChallenge;
+import Utils.SpelerSession;
 import Vragen.*;
 
 import java.util.ArrayList;
@@ -22,7 +23,10 @@ public class Game {
         MeerkeuzeControle controle = new MeerkeuzeControle("C");
 
         Vraag vraag = new Vraag(weergave, controle, monster);
+        vraag.addObserver(monster);
+        vraag.addObserver(SpelerSession.getSpeler().getStatus());
         kamer1.addVraag(vraag);
+        SpelerSession.getSpeler().getStatus().setPositie("De Sprint Planning");
 
         return kamer1;
     }
@@ -40,7 +44,10 @@ public class Game {
         MeerkeuzeControle controle = new MeerkeuzeControle("B");
 
         Vraag vraag = new Vraag(weergave, controle, monster);
+        vraag.addObserver(monster);
+        vraag.addObserver(SpelerSession.getSpeler().getStatus());
         kamer2.addVraag(vraag);
+        SpelerSession.getSpeler().getStatus().setPositie("De Daily Scrum");
 
         return kamer2;
     }
@@ -58,7 +65,10 @@ public class Game {
         MeerkeuzeControle controle = new MeerkeuzeControle("B");
 
         Vraag vraag = new Vraag(weergave, controle, monster);
+        vraag.addObserver(monster);
+        vraag.addObserver(SpelerSession.getSpeler().getStatus());
         kamer3.addVraag(vraag);
+        SpelerSession.getSpeler().getStatus().setPositie("Het Scrum Board");
 
         return kamer3;
     }
@@ -76,7 +86,10 @@ public class Game {
         MeerkeuzeControle controle = new MeerkeuzeControle("B");
 
         Vraag vraag = new Vraag(weergave, controle, monster);
+        vraag.addObserver(monster);
+        vraag.addObserver(SpelerSession.getSpeler().getStatus());
         kamer4.addVraag(vraag);
+        SpelerSession.getSpeler().getStatus().setPositie("De Sprint Review");
 
         return kamer4;
     }
@@ -94,7 +107,10 @@ public class Game {
         MeerkeuzeControle controle = new MeerkeuzeControle("A");
 
         Vraag vraag = new Vraag(weergave, controle, monster);
+        vraag.addObserver(monster);
+        vraag.addObserver(SpelerSession.getSpeler().getStatus());
         kamer5.addVraag(vraag);
+        SpelerSession.getSpeler().getStatus().setPositie("De Sprint Retrospective");
 
         return kamer5;
     }
@@ -112,7 +128,10 @@ public class Game {
         MeerkeuzeControle controle = new MeerkeuzeControle("B");
 
         Vraag vraag = new Vraag(weergave, controle, monster);
+        vraag.addObserver(monster);
+        vraag.addObserver(SpelerSession.getSpeler().getStatus());
         kamer6.addVraag(vraag);
+        SpelerSession.getSpeler().getStatus().setPositie("De Finale");
 
         return kamer6;
     }

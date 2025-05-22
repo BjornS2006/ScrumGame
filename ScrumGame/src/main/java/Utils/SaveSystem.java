@@ -42,8 +42,7 @@ public class SaveSystem {
         try (Reader reader = new FileReader(file)) {
             // Deserialize the JSON to construct a Speler instance,
             // which automatically sets its status.
-            Speler savedSpeler = gson.fromJson(reader, Speler.class);
-            return savedSpeler;
+            return gson.fromJson(reader, Speler.class);
         } catch (IOException e) {
             e.printStackTrace();
             // In case of error, create, save, and return a default player.
