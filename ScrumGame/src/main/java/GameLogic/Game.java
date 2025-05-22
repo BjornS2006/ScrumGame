@@ -1,5 +1,6 @@
 package GameLogic;
 
+import HintSysteem.HelpHintProvider;
 import Kamers.*;
 import Monster.Monster;
 import Monster.MonsterChallenge;
@@ -20,8 +21,8 @@ public class Game {
         weergave.addAntwoord("C: 93");
 
         MeerkeuzeControle controle = new MeerkeuzeControle("C");
-
-        Vraag vraag = new Vraag(weergave, controle, monster);
+        HelpHintProvider helpHintProvider = new HelpHintProvider("s;kdmf");
+        Vraag vraag = new Vraag(weergave, controle, monster, helpHintProvider);
         kamer1.addVraag(vraag);
 
         return kamer1;
@@ -38,8 +39,8 @@ public class Game {
         weergave.addAntwoord("C: 36");
 
         MeerkeuzeControle controle = new MeerkeuzeControle("B");
-
-        Vraag vraag = new Vraag(weergave, controle, monster);
+        HelpHintProvider helpHintProvider = new HelpHintProvider("a;oksmd");
+        Vraag vraag = new Vraag(weergave, controle, monster, helpHintProvider);
         kamer2.addVraag(vraag);
 
         return kamer2;
@@ -56,8 +57,8 @@ public class Game {
         weergave.addAntwoord("C: 36");
 
         MeerkeuzeControle controle = new MeerkeuzeControle("B");
-
-        Vraag vraag = new Vraag(weergave, controle, monster);
+        HelpHintProvider helpHintProvider = new HelpHintProvider("gfdhjgkhj");
+        Vraag vraag = new Vraag(weergave, controle, monster, helpHintProvider);
         kamer3.addVraag(vraag);
 
         return kamer3;
@@ -74,8 +75,8 @@ public class Game {
         weergave.addAntwoord("C: 36");
 
         MeerkeuzeControle controle = new MeerkeuzeControle("B");
-
-        Vraag vraag = new Vraag(weergave, controle, monster);
+        HelpHintProvider helpHintProvider = new HelpHintProvider("dgkh");
+        Vraag vraag = new Vraag(weergave, controle, monster, helpHintProvider);
         kamer4.addVraag(vraag);
 
         return kamer4;
@@ -92,8 +93,8 @@ public class Game {
         weergave.addAntwoord("C: 9");
 
         MeerkeuzeControle controle = new MeerkeuzeControle("A");
-
-        Vraag vraag = new Vraag(weergave, controle, monster);
+        HelpHintProvider helpHintProvider = new HelpHintProvider("ertoj");
+        Vraag vraag = new Vraag(weergave, controle, monster, helpHintProvider);
         kamer5.addVraag(vraag);
 
         return kamer5;
@@ -110,8 +111,8 @@ public class Game {
         weergave.addAntwoord("C: 26");
 
         MeerkeuzeControle controle = new MeerkeuzeControle("B");
-
-        Vraag vraag = new Vraag(weergave, controle, monster);
+        HelpHintProvider helpHintProvider = new HelpHintProvider("qwtuop[");
+        Vraag vraag = new Vraag(weergave, controle, monster, helpHintProvider);
         kamer6.addVraag(vraag);
 
         return kamer6;

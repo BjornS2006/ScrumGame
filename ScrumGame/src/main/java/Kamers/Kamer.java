@@ -1,6 +1,9 @@
 package Kamers;
 
+import HintSysteem.FunnyHintProvider;
+
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public abstract class Kamer {
     protected String naam;
