@@ -14,4 +14,10 @@ public class Status implements Update {
             score++; //hoe we dit precies gaan doen moeten we nog ff beslissen
         }
     }
+    public int getScore() {
+        return score;
+    }
+    public String getPositie() {
+        return positie;
+    }
 }
