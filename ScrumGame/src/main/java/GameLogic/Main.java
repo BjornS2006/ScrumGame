@@ -2,14 +2,15 @@ package GameLogic;
 
 import Utils.SaveSystem;
 import Utils.SpelerInputHandler;
+import Utils.SpelerSession;
 
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         Speler speler = SaveSystem.loadGame();
+        SpelerSession.setSpeler(speler);
         System.out.println("Welkom bij de scrum escape room game!");
         System.out.println("In deze game moet je door verschillende kamers heen gaan om te ontsnappen.");
         System.out.println("In elk van deze kamers moeten een aantal vragen beantwoordt worden.");
@@ -20,7 +21,8 @@ public class Main {
         while (true) {
             String input = SpelerInputHandler.spelerAntwoord();
             if (input.isEmpty()) {
-                Game.maakEersteKamerAan().speelKamer(scanner);
+                Game.maakEersteKamerAan().speelKamer();
+//                alles hier na wordt pass aan het einde van het spel laten zien
             }
         }
     }
