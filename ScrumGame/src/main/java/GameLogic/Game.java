@@ -25,7 +25,7 @@ public class Game {
         HelpHintProvider helpHintProvider = new HelpHintProvider("s;kdmf");
         Vraag vraag = new Vraag(weergave, controle, monster, helpHintProvider);
 
-        Vraag vraag = new Vraag(weergave, controle, monster);
+
         vraag.addObserver(monster);
         vraag.addObserver(SpelerSession.getSpeler().getStatus());
         kamer1.addVraag(vraag);
@@ -48,7 +48,6 @@ public class Game {
         HelpHintProvider helpHintProvider = new HelpHintProvider("a;oksmd");
         Vraag vraag = new Vraag(weergave, controle, monster, helpHintProvider);
 
-        Vraag vraag = new Vraag(weergave, controle, monster);
         vraag.addObserver(monster);
         vraag.addObserver(SpelerSession.getSpeler().getStatus());
         kamer2.addVraag(vraag);
@@ -71,7 +70,7 @@ public class Game {
         HelpHintProvider helpHintProvider = new HelpHintProvider("gfdhjgkhj");
         Vraag vraag = new Vraag(weergave, controle, monster, helpHintProvider);
 
-        Vraag vraag = new Vraag(weergave, controle, monster);
+
         vraag.addObserver(monster);
         vraag.addObserver(SpelerSession.getSpeler().getStatus());
         kamer3.addVraag(vraag);
@@ -94,7 +93,7 @@ public class Game {
         HelpHintProvider helpHintProvider = new HelpHintProvider("dgkh");
         Vraag vraag = new Vraag(weergave, controle, monster, helpHintProvider);
 
-        Vraag vraag = new Vraag(weergave, controle, monster);
+
         vraag.addObserver(monster);
         vraag.addObserver(SpelerSession.getSpeler().getStatus());
         kamer4.addVraag(vraag);
@@ -117,7 +116,7 @@ public class Game {
         HelpHintProvider helpHintProvider = new HelpHintProvider("ertoj");
         Vraag vraag = new Vraag(weergave, controle, monster, helpHintProvider);
 
-        Vraag vraag = new Vraag(weergave, controle, monster);
+
         vraag.addObserver(monster);
         vraag.addObserver(SpelerSession.getSpeler().getStatus());
         kamer5.addVraag(vraag);
@@ -140,7 +139,7 @@ public class Game {
         HelpHintProvider helpHintProvider = new HelpHintProvider("qwtuop[");
         Vraag vraag = new Vraag(weergave, controle, monster, helpHintProvider);
 
-        Vraag vraag = new Vraag(weergave, controle, monster);
+
         vraag.addObserver(monster);
         vraag.addObserver(SpelerSession.getSpeler().getStatus());
         kamer6.addVraag(vraag);
