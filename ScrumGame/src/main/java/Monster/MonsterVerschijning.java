@@ -9,6 +9,6 @@ public class MonsterVerschijning implements MonsterActie {
 
     @Override
     public void uitvoeren() {
-        System.out.println("KIJK UIT, DE " + naam + " VERSCHIJNT!!");
+        System.out.println("KIJK UIT, DE " + naam.toUpperCase() + " VERSCHIJNT!!");
     }
 }

@@ -27,11 +27,10 @@ public class Vraag implements Subject {
         weergaveStrategie.toonVraag();
     }
 
-    public boolean controleerAntwoord () {
-        boolean goedOfFout = controleStrategie.checkGoedAntwoord();
-        stuurUpdate(goedOfFout);
-        return goedOfFout;
+    public boolean controleerAntwoord() {
+        return controleStrategie.checkGoedAntwoord();
     }
+
 
     public String getCorrecteAntwoord() {
         return controleStrategie.getCorrectAntwoord();
@@ -40,6 +39,11 @@ public class Vraag implements Subject {
     public HelpHintProvider getHint() {
         return hint;
     }
+
+    public void stuurUpdateVoorAntwoord(boolean goedOfFout) {
+        stuurUpdate(goedOfFout);
+    }
+
 
     @Override
     public void stuurUpdate(Boolean goedOfFout) {
