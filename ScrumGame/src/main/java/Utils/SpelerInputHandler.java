@@ -1,5 +1,8 @@
 package Utils;
 
+import GameLogic.GameStarter;
+import GameLogic.Main;
+
 import java.util.Scanner;
 
 public class SpelerInputHandler {
@@ -11,5 +14,13 @@ public class SpelerInputHandler {
             spelerAntwoord = scanner.nextLine();
         }
         return spelerAntwoord;
+    }
+    public static void eindeSpel () {
+        if (scanner.nextLine().equalsIgnoreCase("exit")) {
+            System.exit(0);
+        }
+//        } else if (scanner.nextLine().equalsIgnoreCase("restart")) {
+//            Main.main(new String[0]);
+//        }
     }
 }
