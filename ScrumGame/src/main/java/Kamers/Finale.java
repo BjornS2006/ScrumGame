@@ -1,11 +1,12 @@
 package Kamers;
 
+import UsableItems.Komkommer;
 import Vragen.Vraag;
 
 public class Finale extends Kamer {
 
     public Finale() {
-        super("Finale");
+        super("Finale",  new Komkommer());
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }

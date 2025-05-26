@@ -1,12 +1,13 @@
 package Kamers;
 
+import UsableItems.Komkommer;
 import GameLogic.Game;
 import Vragen.Vraag;
 
 public class HetScrumBoard extends Kamer {
 
     public HetScrumBoard() {
-        super("Het Scrum Board");
+        super("Het Scrum Board",  new Komkommer());
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }
