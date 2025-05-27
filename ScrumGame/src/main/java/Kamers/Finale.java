@@ -1,13 +1,17 @@
 package Kamers;
 
+import GameLogic.Speler;
 import Vragen.Vraag;
+import Utils.*;
 
 public class Finale extends Kamer {
+    SaveSystemInterface saveSystem = new SaveSystem();
 
     public Finale() {
         super("Finale");
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
+        this.saveSystem = new SaveSystem();
     }
 
 
@@ -28,6 +32,12 @@ public class Finale extends Kamer {
 
     @Override
     public void naarVolgendeKamer() {
+        saveSystem.Reset();
         System.out.println("Je hebt het spel uitgespeeld!");
+        System.out.println("Bedankt voor het spelen van het spel! 🎂");
+        System.out.println("typ restart om opnieuw te spelen of exit om het spel te verlaten.");
+//        System.out.println("Typ 'exit' om het spel te verlaten.");
+        SpelerInputHandler.eindeSpel();
+
     }
 }
