@@ -15,12 +15,15 @@ public class SpelerInputHandler {
         }
         return spelerAntwoord;
     }
-    public static void eindeSpel () {
-        if (scanner.nextLine().equalsIgnoreCase("exit")) {
+    public static void eindeSpel() {
+        String input = scanner.nextLine();
+        if (input.equalsIgnoreCase("exit")) {
             System.exit(0);
+        } else if (input.equalsIgnoreCase("restart")) {
+            return;
+        } else {
+            System.out.println("Ongeldige invoer. Typ 'exit' om het spel te beëindigen of 'restart' om opnieuw te beginnen.");
+            eindeSpel();
         }
-//        } else if (scanner.nextLine().equalsIgnoreCase("restart")) {
-//            Main.main(new String[0]);
-//        }
     }
 }

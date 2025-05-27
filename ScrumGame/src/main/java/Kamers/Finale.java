@@ -35,8 +35,8 @@ public class Finale extends Kamer {
         saveSystem.Reset();
         System.out.println("Je hebt het spel uitgespeeld!");
         System.out.println("Bedankt voor het spelen van het spel! 🎂");
-//        System.out.println("typ restart om opnieuw te spelen of exit om het spel te verlaten.");
-        System.out.println("Typ 'exit' om het spel te verlaten.");
+        System.out.println("typ restart om opnieuw te spelen of exit om het spel te verlaten.");
+//        System.out.println("Typ 'exit' om het spel te verlaten.");
         SpelerInputHandler.eindeSpel();
 
     }

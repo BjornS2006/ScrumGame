@@ -11,10 +11,12 @@ public class Main {
 
 
     public static void main(String[] args) {
-        GameStarter gameStarter = new GameStarter();
-        gameStarter.printInstructies();
-        gameStarter.startGame();
+        while(true) {
+            GameStarter gameStarter = new GameStarter();
+            gameStarter.printInstructies();
+            gameStarter.startGame();
         }
     }
+}
 
 

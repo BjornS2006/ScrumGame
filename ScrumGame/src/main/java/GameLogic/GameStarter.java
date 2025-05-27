@@ -2,6 +2,7 @@ package GameLogic;
 
 import Utils.SaveSystemInterface;
 import Utils.SaveSystem;
+import Utils.SpelerInputHandler;
 import Utils.SpelerSession;
 import GameLogic.GameRoute;
 
@@ -22,6 +23,7 @@ public class GameStarter {
         System.out.println("Elke kamer gaat over een ander onderwerp binnen scrum.");
         System.out.println("Als je een vraag fout beantwoordt krijg je een nieuwe uitdaging om de vraag te corrigeren.");
         System.out.println("Druk op enter om het spel te beginnen.");
+        SpelerInputHandler.spelerAntwoord();
     }
     public void startGame() {
         Speler speler = saveSystem.loadGame();
