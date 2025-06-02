@@ -1,33 +1,33 @@
 package GameLogic;
 
-import Utils.SpelerInputHandler;
+import Kamers.Kamer;
 import Utils.SpelerSession;
 
-public class GameRoute {
-    public static void locatie() {
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Supplier;
 
-        switch (SpelerSession.getSpeler().getStatus().getPositie()) {
-            case "Start", "De Sprint Planning":
-                Game.maakEersteKamerAan().speelKamer();
-                break;
-            case "De Daily Scrum":
-                Game.maakTweedeKamerAan().speelKamer();
-                break;
-            case "Het Scrum Board":
-                Game.maakDerdeKamerAan().speelKamer();
-                break;
-            case "De Sprint Review":
-                Game.maakVierdeKamerAan().speelKamer();
-                break;
-            case "De Sprint Retrospective":
-                Game.maakVijfdeKamerAan().speelKamer();
-                break;
-            case "De Finale":
-                Game.maakLaatsteKamerAan().speelKamer();
-                break;
-            default:
-                System.out.println("Onbekende positie.");
-                break;
+public class GameRoute {
+    private static final Map<String, Supplier<Kamer>> kamerMap = new HashMap<>();
+
+    static {
+        kamerMap.put("Start", Game::maakEersteKamerAan);
+        kamerMap.put("De Sprint Planning", Game::maakEersteKamerAan);
+        kamerMap.put("De Daily Scrum", Game::maakTweedeKamerAan);
+        kamerMap.put("Het Scrum Board", Game::maakDerdeKamerAan);
+        kamerMap.put("De Sprint Review", Game::maakVierdeKamerAan);
+        kamerMap.put("De Sprint Retrospective", Game::maakVijfdeKamerAan);
+        kamerMap.put("De Finale", Game::maakLaatsteKamerAan);
+    }
+
+    public static void locatie() {
+        String positie = SpelerSession.getSpeler().getStatus().getPositie();
+        Supplier<Kamer> kamerSupplier = kamerMap.get(positie);
+
+        if (kamerSupplier != null) {
+            kamerSupplier.get().speelKamer();
+        } else {
+            System.out.println("Onbekende positie.");
         }
     }
 }
