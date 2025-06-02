@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class Speler {
         private Status status;
-        private ArrayList <I_UsebleItem> items;
+        private transient ArrayList <I_UsebleItem> items;
 
         public Speler (Status status) {
             this.status = status;
@@ -33,6 +33,9 @@ public class Speler {
         }
 
         public void addItem (I_UsebleItem item) {
+            if (items == null) {
+                items = new ArrayList<>();
+            }
             items.add(item);
         }
 

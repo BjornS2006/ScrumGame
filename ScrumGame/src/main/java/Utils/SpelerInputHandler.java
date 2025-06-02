@@ -21,6 +21,7 @@ public class SpelerInputHandler {
         for (I_UsebleItem item : SpelerSession.getSpeler().getItems()) {
             if (spelerAntwoord.equalsIgnoreCase(item.getName())) {
                 item.gebruik();
+                break;
             }
         }
         return spelerAntwoord;
