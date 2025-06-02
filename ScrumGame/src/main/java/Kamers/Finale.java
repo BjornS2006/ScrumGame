@@ -1,6 +1,7 @@
 package Kamers;
 
 import GameLogic.Speler;
+import UsableItems.Komkommer;
 import Vragen.Vraag;
 import Utils.*;
 
@@ -8,7 +9,7 @@ public class Finale extends Kamer {
     SaveSystemInterface saveSystem = new SaveSystem();
 
     public Finale() {
-        super("Finale");
+        super("Finale",  new Komkommer());
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
         this.saveSystem = new SaveSystem();

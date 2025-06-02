@@ -17,6 +17,13 @@ public class GameStarter {
         this.saveSystem = saveSystem;
     }
     public void printInstructies () {
+        if (SpelerSession.getSpeler() == null) {
+            Speler speler = saveSystem.loadGame();
+            if (speler.getStatus() != null) {
+                speler.getStatus().setSaveSystem(saveSystem);
+            }
+            SpelerSession.setSpeler(speler);
+        }
         System.out.println("Welkom bij de scrum escape room game!");
         System.out.println("In deze game moet je door verschillende kamers heen gaan om te ontsnappen.");
         System.out.println("In elk van deze kamers moeten een aantal vragen beantwoordt worden.");

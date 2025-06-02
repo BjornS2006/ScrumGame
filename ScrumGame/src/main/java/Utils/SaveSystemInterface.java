@@ -7,4 +7,3 @@ public interface SaveSystemInterface {
     Speler loadGame();
     void Reset();
 }
-

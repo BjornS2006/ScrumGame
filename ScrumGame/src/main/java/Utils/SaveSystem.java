@@ -1,60 +1,64 @@
 package Utils;
 
-import GameLogic.Status;
 import GameLogic.Speler;
+import GameLogic.Status;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import java.io.File;
-import java.io.FileReader;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import UsableItems.I_UsebleItem;
+import UsableItems.Komkommer;
 import java.io.FileWriter;
+import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
-import java.io.Writer;
+import java.io.File;
 
 public class SaveSystem implements SaveSystemInterface {
     private static final String FILE_PATH = "Save.json";
-    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private static final Gson gson = new GsonBuilder().create();
 
     @Override
     public void saveGame(Speler speler) {
-        try (Writer writer = new FileWriter(FILE_PATH)) {
+        try (FileWriter writer = new FileWriter(FILE_PATH)) {
             gson.toJson(speler, writer);
-            System.out.println("Spelergegevens opgeslagen!");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Error saving game: " + e.getMessage());
         }
     }
 
     @Override
     public Speler loadGame() {
-        File file = new File(FILE_PATH);
-        if (!file.exists()) {
+        File saveFile = new File(FILE_PATH);
+        if (!saveFile.exists()) {
             Speler defaultSpeler = createDefaultSpeler();
             saveGame(defaultSpeler);
-            return defaultSpeler;
         }
-        try (Reader reader = new FileReader(file)) {
-            return gson.fromJson(reader, Speler.class);
+        try (FileReader reader = new FileReader(FILE_PATH)) {
+            Speler speler = gson.fromJson(reader, Speler.class);
+            if (speler == null) {
+                return createDefaultSpeler();
+            }
+            return speler;
         } catch (IOException e) {
-            e.printStackTrace();
-            Speler defaultSpeler = createDefaultSpeler();
-            saveGame(defaultSpeler);
-            return defaultSpeler;
+            System.err.println("Error loading game: " + e.getMessage());
+            return createDefaultSpeler();
         }
     }
-
     @Override
     public void Reset() {
-        Speler defaultSpeler = createDefaultSpeler();
-        try (Writer writer = new FileWriter(FILE_PATH)) {
-            gson.toJson(defaultSpeler, writer);
-            System.out.println("Spelergegevens gereset!");
+        try (FileWriter writer = new FileWriter(FILE_PATH)) {
+            writer.write(""); // Clear the file content
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Error resetting save file: " + e.getMessage());
         }
+        // Ensure a default Speler is created after reset
+        saveGame(createDefaultSpeler());
     }
 
     private Speler createDefaultSpeler() {
-        return new Speler(new Status(0, "Start", this));
+        Status defaultStatus = new Status(0, "Start", this);
+        return new Speler(defaultStatus);
     }
 }
+

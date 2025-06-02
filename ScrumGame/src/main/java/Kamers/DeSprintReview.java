@@ -1,12 +1,13 @@
 package Kamers;
 
 import GameLogic.Game;
+import UsableItems.Komkommer;
 import Vragen.Vraag;
 
 public class DeSprintReview extends Kamer {
 
     public DeSprintReview() {
-        super("De Sprint Review");
+        super("De Sprint Review",  new Komkommer());
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }
