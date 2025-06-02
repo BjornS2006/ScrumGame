@@ -26,6 +26,9 @@ public class Speler {
 
 
         public ArrayList<I_UsebleItem> getItems() {
+            if (items == null) {
+                items = new ArrayList<>();
+            }
             return items;
         }
 

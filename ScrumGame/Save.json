@@ -1,6 +1,12 @@
 {
   "status": {
-    "score": 4,
-    "positie": "De Daily Scrum"
-  }
+    "score": 13,
+    "positie": "De Sprint Planning"
+  },
+  "items": [
+    {
+      "name": "Komkommer",
+      "description": "Een magische komkommer."
+    }
+  ]
 }
