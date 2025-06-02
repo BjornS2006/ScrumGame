@@ -1,7 +1,6 @@
 package Kamers;
 
 import Joker.Joker;
-import Vragen.Vraag;
 
 public class GewoneKamer extends Kamer {
     public GewoneKamer(String naam, Joker joker) {

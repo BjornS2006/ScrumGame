@@ -49,3 +49,11 @@ public abstract class Kamer {
     public abstract void naarVolgendeKamer();
     public abstract void geefSleutel();
 }
+
+    public abstract void enter();
+
+    public abstract void stelVraag();
+
+    public abstract void naarVolgendeKamer();
+
+    public abstract void geefSleutel();
