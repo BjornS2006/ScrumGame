@@ -1,12 +1,13 @@
 package Kamers;
 
 import GameLogic.Game;
+import UsableItems.Komkommer;
 import Vragen.Vraag;
 
 public class DeDailyScrum extends Kamer {
 
     public DeDailyScrum() {
-        super("De Daily Scrum");
+        super("De Daily Scrum",  new Komkommer());
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }
