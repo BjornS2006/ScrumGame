@@ -24,18 +24,20 @@ public class Speler {
             this.status = status;
         }
 
-
-        public ArrayList<I_UsebleItem> getItems() {
+        // Always ensure items is initialized after deserialization
+        private void ensureItemsInitialized() {
             if (items == null) {
                 items = new ArrayList<>();
             }
+        }
+
+        public ArrayList<I_UsebleItem> getItems() {
+            ensureItemsInitialized();
             return items;
         }
 
         public void addItem (I_UsebleItem item) {
-            if (items == null) {
-                items = new ArrayList<>();
-            }
+            ensureItemsInitialized();
             items.add(item);
         }
 

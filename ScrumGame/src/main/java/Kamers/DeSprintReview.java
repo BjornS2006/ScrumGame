@@ -4,7 +4,7 @@ import GameLogic.Game;
 import UsableItems.Komkommer;
 import Vragen.Vraag;
 
-public class DeSprintReview extends Kamer {
+public class DeSprintReview extends Kamer implements Joker.KeyJokerUsable {
 
     public DeSprintReview() {
         super("De Sprint Review",  new Komkommer());
@@ -27,9 +27,19 @@ public class DeSprintReview extends Kamer {
         vraagManager.addVraag(vraag);
     }
 
-
     @Override
     public void naarVolgendeKamer() {
         Game.maakVijfdeKamerAan().speelKamer();
+    }
+
+    @Override
+    public void showJokerHint() {
+        System.out.println("Hint: De Sprint Review is een bijeenkomst waar het team de resultaten van de sprint presenteert en feedback verzamelt.");
+    }
+
+    @Override
+    public void skipRoom() {
+        System.out.println("Je gebruikt de KeyJoker! Je slaat deze kamer over.");
+        naarVolgendeKamer();
     }
 }

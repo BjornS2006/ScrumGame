@@ -39,4 +39,9 @@ public class DeSprintPlanning extends Kamer {
     public void naarVolgendeKamer() {
         Game.maakTweedeKamerAan().speelKamer();
     }
+
+    @Override
+    public void showJokerHint() {
+        System.out.println("Deze kamer heeft geen specifieke hint, maar je kunt de komkommer gebruiken voor een magische ervaring.");
+    }
 }

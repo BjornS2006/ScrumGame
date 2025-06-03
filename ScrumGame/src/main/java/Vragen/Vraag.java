@@ -31,6 +31,13 @@ public class Vraag implements Subject {
         return controleStrategie.checkGoedAntwoord();
     }
 
+    // Overload for answer checking with input
+    public boolean controleerAntwoord(String antwoord) {
+        if (antwoord == null) return false;
+        String gegeven = antwoord.trim().toLowerCase();
+        String correct = controleStrategie.getCorrectAntwoord().trim().toLowerCase();
+        return gegeven.equals(correct);
+    }
 
     public String getCorrecteAntwoord() {
         return controleStrategie.getCorrectAntwoord();

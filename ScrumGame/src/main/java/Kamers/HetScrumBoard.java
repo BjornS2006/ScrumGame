@@ -32,4 +32,9 @@ public class HetScrumBoard extends Kamer {
     public void naarVolgendeKamer() {
         Game.maakVierdeKamerAan().speelKamer();
     }
+
+    @Override
+    public void showJokerHint() {
+        System.out.println("Hint: Het Scrum Board is een hulpmiddel voor teams om hun werk te organiseren en te visualiseren.");}
 }
+

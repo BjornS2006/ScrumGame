@@ -41,4 +41,8 @@ public class Finale extends Kamer {
         SpelerInputHandler.eindeSpel();
 
     }
+    @Override
+    public void showJokerHint(){
+        System.out.println("Joker hint: Scrum is een framework dat teams helpt om beter samen te werken en sneller waarde te leveren.");
+    }
 }

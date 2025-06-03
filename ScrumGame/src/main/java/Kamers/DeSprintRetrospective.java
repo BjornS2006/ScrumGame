@@ -34,4 +34,9 @@ public class DeSprintRetrospective extends Kamer {
     public void naarVolgendeKamer() {
         Game.maakLaatsteKamerAan().speelKamer();
     }
+
+    @Override
+    public void showJokerHint() {
+        System.out.println("Hint: Reflecteer op de afgelopen sprint en bespreek wat er goed ging en wat beter kan.");
+    }
 }
