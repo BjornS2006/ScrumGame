@@ -1,6 +1,7 @@
 package Kamers;
 
 import GameLogic.Game;
+import UsableItems.KamerInforBoek;
 import UsableItems.Komkommer;
 import Vragen.Vraag;
 
@@ -16,6 +17,8 @@ public class DeDailyScrum extends Kamer {
     public void enter() {
         System.out.println("Welkom in de 2de kamer.");
         System.out.println("Deze kamer gaat over De Daily Scrum");
+        System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
+        System.out.println(item.getDescription());
         System.out.println("Beantwoord de volgende vraag:");
     }
 

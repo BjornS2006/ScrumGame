@@ -1,15 +1,12 @@
 package GameLogic;
-import UsableItems.I_UsebleItem;
+import UsableItems.I_UsableItem;
 import UsableItems.Komkommer;
-import UsableItems.UsableItem;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 public class Speler {
         private Status status;
-        private transient ArrayList <I_UsebleItem> items;
+        private transient ArrayList <I_UsableItem> items;
 
         public Speler (Status status) {
             this.status = status;
@@ -25,14 +22,14 @@ public class Speler {
         }
 
 
-        public ArrayList<I_UsebleItem> getItems() {
+        public ArrayList<I_UsableItem> getItems() {
             if (items == null) {
                 items = new ArrayList<>();
             }
             return items;
         }
 
-        public void addItem (I_UsebleItem item) {
+        public void addItem (I_UsableItem item) {
             if (items == null) {
                 items = new ArrayList<>();
             }
