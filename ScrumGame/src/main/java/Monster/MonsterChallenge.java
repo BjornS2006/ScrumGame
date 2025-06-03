@@ -28,10 +28,13 @@ public class MonsterChallenge {
              if (item instanceof Zwaard) {
                  System.out.println("Wil je je zwaard gebruiken om te proberen het monster te verslaan? (j/n)");
                  if (SpelerInputHandler.spelerAntwoord().equals("j")) {
+                     item.gebruik();
                      if (hitMonster.probeerMonsterHit()) {
                          System.out.println("Je hebt het monster geraakt met je zwaard!");
                          System.out.println("Het monster trekt zich terug...");
+                         System.out.println("Het zwaard is gebroken en kan niet opnieuw gebruikt worden.");
                          verslagen = true;
+                         SpelerSession.getSpeler().getItems().remove(item);
                      }
                      else {
                          System.out.println("Je hebt het monster niet geraakt!");
