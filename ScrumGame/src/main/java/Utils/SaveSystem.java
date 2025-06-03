@@ -4,11 +4,7 @@ import GameLogic.Speler;
 import GameLogic.Status;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import UsableItems.I_UsebleItem;
-import UsableItems.Komkommer;
+
 import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;

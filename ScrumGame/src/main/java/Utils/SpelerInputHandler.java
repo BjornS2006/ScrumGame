@@ -1,11 +1,6 @@
 package Utils;
 
-import UsableItems.I_UsebleItem;
-import UsableItems.UsableItem;
-
-import java.util.ArrayList;
-import GameLogic.GameStarter;
-import GameLogic.Main;
+import UsableItems.I_UsableItem;
 
 import java.util.Scanner;
 
@@ -18,7 +13,7 @@ public class SpelerInputHandler {
             System.out.println(SpelerSession.getSpeler().getStatus());
             spelerAntwoord = scanner.nextLine();
         }
-        for (I_UsebleItem item : SpelerSession.getSpeler().getItems()) {
+        for (I_UsableItem item : SpelerSession.getSpeler().getItems()) {
             if (spelerAntwoord.equalsIgnoreCase(item.getName())) {
                 item.gebruik();
                 break;
