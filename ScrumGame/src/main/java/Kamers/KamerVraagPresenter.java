@@ -18,6 +18,8 @@ public class KamerVraagPresenter {
             for (I_UsableItem item : SpelerSession.getSpeler().getItems()) {
                 if (SpelerInputHandler.spelerAntwoord().equalsIgnoreCase(item.getName())) {
                     break;
+                } else {
+                    break;
                 }
             }
 
