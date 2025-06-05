@@ -48,11 +48,6 @@ public class GameStarter {
         SpelerInputHandler.spelerAntwoord();
     }
     public void startGame() {
-        Speler speler = saveSystem.loadGame();
-        if (speler != null && speler.getStatus() != null) {
-            speler.getStatus().setSaveSystem(saveSystem);
-        }
-        SpelerSession.setSpeler(speler);
         GameRoute.locatie();
     }
 }
