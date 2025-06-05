@@ -3,6 +3,7 @@ package Kamers;
 import GameLogic.Game;
 import UsableItems.KamerInforBoek;
 import UsableItems.Komkommer;
+import Utils.SpelerSession;
 import Vragen.Vraag;
 
 public class DeDailyScrum extends Kamer {
@@ -15,6 +16,8 @@ public class DeDailyScrum extends Kamer {
 
     @Override
     public void enter() {
+        SpelerSession.getSpeler().addItem(item);
+
         System.out.println("Welkom in de 2de kamer.");
         System.out.println("Deze kamer gaat over De Daily Scrum");
         System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");

@@ -8,6 +8,15 @@ public class Speler {
         private Status status;
         private transient ArrayList <I_UsableItem> items;
 
+        public void removeItem (String ItemName) {
+            for(I_UsableItem item : items) {
+                if(item.getName().equals(ItemName)) {
+                    items.remove(item);
+                    break;
+                }
+            }
+        }
+
         public Speler (Status status) {
             this.status = status;
             items = new ArrayList<>();
