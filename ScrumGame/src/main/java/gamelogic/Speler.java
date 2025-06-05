@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Speler {
         private Status status;
-        private transient ArrayList <IUsebleItem> items;
+        private ArrayList <IUsebleItem> items;
 
         public Speler (Status status) {
             this.status = status;

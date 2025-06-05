@@ -4,6 +4,7 @@ import usableitems.UsableItem;
 import joker.HintJoker;
 import joker.KeyJoker;
 import usableitems.IUsebleItem;
+import utils.SpelerInputHandler;
 import vragen.Vraag;
 import java.util.Scanner;
 
@@ -27,7 +28,7 @@ public abstract class Kamer {
                 String input = "";
                 do {
                     System.out.println("Typ je antwoord of typ 'joker' om je joker te gebruiken:");
-                    input = new Scanner(System.in).nextLine();
+                    input = SpelerInputHandler.spelerAntwoord();
                     IUsebleItem joker = utils.SpelerSession.getSpeler().getItems().stream()
                         .filter(item -> item instanceof joker.HintJoker || item instanceof joker.KeyJoker)
                         .findFirst().orElse(null);
