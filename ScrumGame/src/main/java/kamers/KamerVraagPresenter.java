@@ -1,0 +1,50 @@
+package kamers;
+
+<<<<<<< HEAD:ScrumGame/src/main/java/Kamers/KamerVraagPresenter.java
+import HintSysteem.HintPresenter;
+import UsableItems.I_UsableItem;
+import Utils.SpelerInputHandler;
+import Utils.SpelerSession;
+import Vragen.Vraag;
+
+import java.util.Scanner;
+=======
+import hintsysteem.HintPresenter;
+import utils.SpelerInputHandler;
+import vragen.Vraag;
+>>>>>>> Jokertest:ScrumGame/src/main/java/kamers/KamerVraagPresenter.java
+
+public class KamerVraagPresenter {
+
+
+    public void stelVragen(KamerVraagManager vraagManager) {
+        for (Vraag vraag : vraagManager.getVragen()) {
+            vraag.stelVraag();
+            System.out.println("Als je een item wilt gebruiken, nu is je moment!");
+            for (I_UsableItem item : SpelerSession.getSpeler().getItems()) {
+                if (SpelerInputHandler.spelerAntwoord().equalsIgnoreCase(item.getName())) {
+                    break;
+                } else {
+                    break;
+                }
+            }
+
+            boolean goedOfFout = vraag.controleerAntwoord();
+
+            if (goedOfFout) {
+                vraag.stuurUpdateVoorAntwoord(true);
+                System.out.println("Volgende vraag!");
+            } else {
+                System.out.println("Wil je een hint?");
+                String aapje = SpelerInputHandler.spelerAntwoord();
+                if (aapje.equalsIgnoreCase("Ja")) {
+                    HintPresenter hintPresenter = new HintPresenter(vraag);
+                    hintPresenter.presentHint();
+                }
+                vraag.stuurUpdateVoorAntwoord(false); // Monster challenge pas na hint
+            }
+        }
+    }
+
+}
+
