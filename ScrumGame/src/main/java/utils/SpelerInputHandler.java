@@ -1,6 +1,6 @@
 package utils;
 
-import usableitems.IUsebleItem;
+import usableitems.IUsableItem;
 import java.util.Scanner;
 
 public class SpelerInputHandler {
@@ -12,7 +12,7 @@ public class SpelerInputHandler {
             System.out.println(SpelerSession.getSpeler().getStatus());
             spelerAntwoord = scanner.nextLine();
         }
-        for (IUsebleItem item : SpelerSession.getSpeler().getItems()) {
+        for (IUsableItem item : SpelerSession.getSpeler().getItems()) {
             if (spelerAntwoord.equalsIgnoreCase(item.getName())) {
                 item.gebruik();
                 break;

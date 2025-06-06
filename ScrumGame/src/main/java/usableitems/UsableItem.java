@@ -1,6 +1,6 @@
 package usableitems;
 
-public abstract class UsableItem implements IUsebleItem {
+public abstract class UsableItem implements IUsableItem {
     private String name;
     private String description;
 

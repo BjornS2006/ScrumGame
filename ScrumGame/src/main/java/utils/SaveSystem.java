@@ -3,7 +3,7 @@ package utils;
 import gamelogic.Speler;
 import gamelogic.Status;
 import com.google.gson.*;
-import usableitems.IUsebleItem;
+import usableitems.IUsableItem;
 import usableitems.Zwaart;
 import usableitems.Komkommer;
 import usableitems.KamerInforBoek;
@@ -18,9 +18,9 @@ import java.io.File;
 public class SaveSystem implements utils.SaveSystemInterface {
     private static final String FILE_PATH = "Save.json";
     private static final Gson gson = new GsonBuilder()
-            .registerTypeAdapter(IUsebleItem.class, new JsonDeserializer<IUsebleItem>() {
+            .registerTypeAdapter(IUsableItem.class, new JsonDeserializer<IUsableItem>() {
                 @Override
-                public IUsebleItem deserialize(JsonElement json, java.lang.reflect.Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+                public IUsableItem deserialize(JsonElement json, java.lang.reflect.Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
                     JsonObject obj = json.getAsJsonObject();
                     String type = obj.get("type").getAsString();
                     return switch (type) {
@@ -33,7 +33,7 @@ public class SaveSystem implements utils.SaveSystemInterface {
                     };
                 }
             })
-            .registerTypeAdapter(IUsebleItem.class, (JsonSerializer<IUsebleItem>) (src, typeOfSrc, context) -> {
+            .registerTypeAdapter(IUsableItem.class, (JsonSerializer<IUsableItem>) (src, typeOfSrc, context) -> {
                 JsonObject obj = (JsonObject) context.serialize(src, src.getClass());
                 obj.addProperty("type", src.getClass().getSimpleName());
                 return obj;

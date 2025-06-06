@@ -1,11 +1,11 @@
 package gamelogic;
-import usableitems.IUsebleItem;
+import usableitems.IUsableItem;
 import usableitems.Komkommer;
 import java.util.ArrayList;
 
 public class Speler {
         private Status status;
-        private ArrayList <IUsebleItem> items;
+        private ArrayList <IUsableItem> items;
 
         public Speler (Status status) {
             this.status = status;
@@ -27,12 +27,12 @@ public class Speler {
             }
         }
 
-        public ArrayList<IUsebleItem> getItems() {
+        public ArrayList<IUsableItem> getItems() {
             ensureItemsInitialized();
             return items;
         }
 
-        public void addItem (IUsebleItem item) {
+        public void addItem (IUsableItem item) {
             ensureItemsInitialized();
             items.add(item);
         }

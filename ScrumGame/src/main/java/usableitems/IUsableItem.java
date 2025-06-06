@@ -1,6 +1,6 @@
 package usableitems;
 
-public interface IUsebleItem {
+public interface IUsableItem {
     public String  getName();
     public String getDescription();
     public void gebruik();

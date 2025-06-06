@@ -1,6 +1,6 @@
 package usableitems;
 
-public class Zwaart extends UsableItem implements IUsebleItem, IWapen {
+public class Zwaart extends UsableItem implements IUsableItem, IWapen {
     //public void ValAan() {
    //
    // }

@@ -1,6 +1,6 @@
 package usableitems;
 
-public class Komkommer extends UsableItem implements IUsebleItem, IMagie {
+public class Komkommer extends UsableItem implements IUsableItem, IMagie {
     public Komkommer() {
         super("Komkommer", "Een magische komkommer.");
     }
