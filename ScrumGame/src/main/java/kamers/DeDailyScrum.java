@@ -3,6 +3,7 @@ package kamers;
 import gamelogic.Game;
 import joker.IKeyJoker;
 import usableitems.Komkommer;
+import utils.SpelerSession;
 import vragen.Vraag;
 
 public class DeDailyScrum extends Kamer implements IKeyJoker {

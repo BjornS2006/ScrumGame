@@ -2,6 +2,7 @@ package kamers;
 
 import usableitems.Komkommer;
 import gamelogic.Game;
+import utils.SpelerSession;
 import vragen.Vraag;
 
 public class HetScrumBoard extends Kamer {

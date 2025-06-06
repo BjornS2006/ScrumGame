@@ -1,7 +1,7 @@
-package Utils;
+package utils;
 
-import GameLogic.Speler;
-import GameLogic.Status;
+import gamelogic.Speler;
+import gamelogic.Status;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -41,8 +41,9 @@ public class SaveSystem implements SaveSystemInterface {
             return createDefaultSpeler();
         }
     }
+
     @Override
-    public void Reset() {
+    public void reset() {
         try (FileWriter writer = new FileWriter(FILE_PATH)) {
             writer.write(""); // Clear the file content
         } catch (IOException e) {
@@ -52,9 +53,12 @@ public class SaveSystem implements SaveSystemInterface {
         saveGame(createDefaultSpeler());
     }
 
+
+
     private Speler createDefaultSpeler() {
         Status defaultStatus = new Status(0, "Start", this);
         return new Speler(defaultStatus);
     }
 }
+
 

@@ -1,4 +1,4 @@
-package UsableItems;
+package usableitems;
 
 public class JeffDeAssistent extends UsableItem implements I_Informatie {
 

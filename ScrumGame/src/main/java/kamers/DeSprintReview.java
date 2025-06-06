@@ -3,8 +3,9 @@ package kamers;
 import gamelogic.Game;
 import joker.IKeyJoker;
 import usableitems.Komkommer;
+import utils.SpelerSession;
 import vragen.Vraag;
-import UsableItems.JeffDeAssistent;
+import usableitems.JeffDeAssistent;
 
 public class DeSprintReview extends Kamer implements IKeyJoker {
 

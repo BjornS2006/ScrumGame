@@ -1,6 +1,6 @@
 package usableitems;
 
-public class KamerInforBoek extends UsableItem implements I_Informatie, I_UsableItem {
+public class KamerInforBoek extends UsableItem implements I_Informatie, IUsableItem {
     private String informatie;
 
     public void ShowInfo() {

@@ -1,7 +1,9 @@
 package kamers;
 
 import hintsysteem.HintPresenter;
+import usableitems.IUsableItem;
 import utils.SpelerInputHandler;
+import utils.SpelerSession;
 import vragen.Vraag;
 
 public class KamerVraagPresenter {
@@ -11,7 +13,7 @@ public class KamerVraagPresenter {
         for (Vraag vraag : vraagManager.getVragen()) {
             vraag.stelVraag();
             System.out.println("Als je een item wilt gebruiken, nu is je moment!");
-            for (I_UsableItem item : SpelerSession.getSpeler().getItems()) {
+            for (IUsableItem item : SpelerSession.getSpeler().getItems()) {
                 if (SpelerInputHandler.spelerAntwoord().equalsIgnoreCase(item.getName())) {
                     break;
                 } else {

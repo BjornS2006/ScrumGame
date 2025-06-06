@@ -3,7 +3,7 @@ package kamers;
 import usableitems.Komkommer;
 import vragen.Vraag;
 import utils.*;
-import UsableItems.JeffDeAssistent;
+import usableitems.JeffDeAssistent;
 
 public class Finale extends Kamer {
     SaveSystemInterface saveSystem = new SaveSystem();

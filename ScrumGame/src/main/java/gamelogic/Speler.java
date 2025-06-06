@@ -8,7 +8,7 @@ public class Speler {
         private ArrayList <IUsableItem> items;
 
         public void removeItem (String ItemName) {
-            for(I_UsableItem item : items) {
+            for(IUsableItem item : items) {
                 if(item.getName().equals(ItemName)) {
                     items.remove(item);
                     break;

@@ -2,6 +2,7 @@ package kamers;
 
 import gamelogic.Game;
 import usableitems.Komkommer;
+import utils.SpelerSession;
 import vragen.Vraag;
 
 public class DeSprintRetrospective extends Kamer {

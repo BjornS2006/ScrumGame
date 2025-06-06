@@ -1,10 +1,16 @@
 package monster;
 
+import usableitems.IUsableItem;
+import utils.SpelerInputHandler;
+import utils.SpelerSession;
+
+
 public class MonsterChallenge {
     private MonsterVerschijning monsterVerschijning;
     private MonsterDobbelsteen monsterDobbelsteen;
     private MonsterNieuweVraag monsterNieuweVraag;
     private monsterVraagBeheer vraagBeheer;
+    private HitMonster hitMonster;
 
     public MonsterChallenge(String monsterNaam) {
         monsterVerschijning = new MonsterVerschijning(monsterNaam);
@@ -17,8 +23,8 @@ public class MonsterChallenge {
     public void startChallenge() {
         monsterVerschijning.uitvoeren();
         boolean verslagen = false;
-        for (I_UsableItem item : SpelerSession.getSpeler().getItems()) {
-             if (item instanceof Zwaard) {
+        for (IUsableItem item : SpelerSession.getSpeler().getItems()) {
+             if (item instanceof usableitems.Zwaard) {
                  System.out.println("Wil je je zwaard gebruiken om te proberen het monster te verslaan? (j/n)");
                  if (SpelerInputHandler.spelerAntwoord().equals("j")) {
                      item.gebruik();
