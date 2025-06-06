@@ -1,44 +1,18 @@
-package utils;
+package Utils;
 
-import gamelogic.Speler;
-import gamelogic.Status;
-import com.google.gson.*;
-import usableitems.IUsableItem;
-import usableitems.Zwaart;
-import usableitems.Komkommer;
-import usableitems.KamerInforBoek;
-import joker.KeyJoker;
-import joker.HintJoker;
+import GameLogic.Speler;
+import GameLogic.Status;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
 
-public class SaveSystem implements utils.SaveSystemInterface {
+public class SaveSystem implements SaveSystemInterface {
     private static final String FILE_PATH = "Save.json";
-    private static final Gson gson = new GsonBuilder()
-            .registerTypeAdapter(IUsableItem.class, new JsonDeserializer<IUsableItem>() {
-                @Override
-                public IUsableItem deserialize(JsonElement json, java.lang.reflect.Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-                    JsonObject obj = json.getAsJsonObject();
-                    String type = obj.get("type").getAsString();
-                    return switch (type) {
-                        case "Zwaart" -> context.deserialize(json, Zwaart.class);
-                        case "Komkommer" -> context.deserialize(json, Komkommer.class);
-                        case "KamerInforBoek" -> context.deserialize(json, KamerInforBoek.class);
-                        case "KeyJoker" -> context.deserialize(json, KeyJoker.class);
-                        case "HintJoker" -> context.deserialize(json, HintJoker.class);
-                        default -> throw new JsonParseException("Unknown item type: " + type);
-                    };
-                }
-            })
-            .registerTypeAdapter(IUsableItem.class, (JsonSerializer<IUsableItem>) (src, typeOfSrc, context) -> {
-                JsonObject obj = (JsonObject) context.serialize(src, src.getClass());
-                obj.addProperty("type", src.getClass().getSimpleName());
-                return obj;
-            })
-            .create();
+    private static final Gson gson = new GsonBuilder().create();
 
     @Override
     public void saveGame(Speler speler) {
@@ -67,14 +41,14 @@ public class SaveSystem implements utils.SaveSystemInterface {
             return createDefaultSpeler();
         }
     }
-
     @Override
-    public void reset() {
+    public void Reset() {
         try (FileWriter writer = new FileWriter(FILE_PATH)) {
-            writer.write("");
+            writer.write(""); // Clear the file content
         } catch (IOException e) {
             System.err.println("Error resetting save file: " + e.getMessage());
         }
+        // Ensure a default Speler is created after reset
         saveGame(createDefaultSpeler());
     }
 
@@ -83,3 +57,4 @@ public class SaveSystem implements utils.SaveSystemInterface {
         return new Speler(defaultStatus);
     }
 }
+

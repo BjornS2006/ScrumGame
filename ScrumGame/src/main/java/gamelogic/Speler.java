@@ -7,6 +7,15 @@ public class Speler {
         private Status status;
         private ArrayList <IUsableItem> items;
 
+        public void removeItem (String ItemName) {
+            for(I_UsableItem item : items) {
+                if(item.getName().equals(ItemName)) {
+                    items.remove(item);
+                    break;
+                }
+            }
+        }
+
         public Speler (Status status) {
             this.status = status;
             items = new ArrayList<>();
@@ -20,7 +29,6 @@ public class Speler {
             this.status = status;
         }
 
-        // Always ensure items is initialized after deserialization
         private void ensureItemsInitialized() {
             if (items == null) {
                 items = new ArrayList<>();

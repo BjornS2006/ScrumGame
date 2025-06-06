@@ -15,8 +15,12 @@ public class DeDailyScrum extends Kamer implements IKeyJoker {
 
     @Override
     public void enter() {
+        SpelerSession.getSpeler().addItem(item);
+
         System.out.println("Welkom in de 2de kamer.");
         System.out.println("Deze kamer gaat over De Daily Scrum");
+        System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
+        System.out.println(item.getDescription());
         System.out.println("Beantwoord de volgende vraag:");
     }
 

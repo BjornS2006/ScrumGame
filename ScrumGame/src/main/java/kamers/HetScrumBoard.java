@@ -14,8 +14,12 @@ public class HetScrumBoard extends Kamer {
 
     @Override
     public void enter() {
+        SpelerSession.getSpeler().addItem(item);
+
         System.out.println("Welkom in de 3de kamer.");
         System.out.println("Deze kamer gaat over het Scrum Board");
+        System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
+        System.out.println(item.getDescription());
         System.out.println("Beantwoord de volgende vraag:");
     }
 

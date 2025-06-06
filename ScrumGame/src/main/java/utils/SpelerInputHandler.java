@@ -15,6 +15,7 @@ public class SpelerInputHandler {
         for (IUsableItem item : SpelerSession.getSpeler().getItems()) {
             if (spelerAntwoord.equalsIgnoreCase(item.getName())) {
                 item.gebruik();
+                SpelerSession.getSpeler().removeItem(item.getName());
                 break;
             }
         }
