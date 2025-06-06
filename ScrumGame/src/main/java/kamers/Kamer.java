@@ -3,10 +3,9 @@ package kamers;
 import usableitems.UsableItem;
 import joker.HintJoker;
 import joker.KeyJoker;
-import usableitems.IUsebleItem;
+import usableitems.IUsableItem;
 import utils.SpelerInputHandler;
 import vragen.Vraag;
-import java.util.Scanner;
 
 public abstract class Kamer {
     protected String naam;
@@ -29,7 +28,7 @@ public abstract class Kamer {
                 do {
                     System.out.println("Typ je antwoord of typ 'joker' om je joker te gebruiken:");
                     input = SpelerInputHandler.spelerAntwoord();
-                    IUsebleItem joker = utils.SpelerSession.getSpeler().getItems().stream()
+                    IUsableItem joker = utils.SpelerSession.getSpeler().getItems().stream()
                         .filter(item -> item instanceof joker.HintJoker || item instanceof joker.KeyJoker)
                         .findFirst().orElse(null);
                     if (input.equalsIgnoreCase("joker")) {

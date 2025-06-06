@@ -1,25 +1,16 @@
-<<<<<<< HEAD:ScrumGame/src/main/java/Monster/MonsterChallenge.java
-package Monster;
-import UsableItems.I_UsableItem;
-import UsableItems.Zwaard;
-import Utils.SpelerInputHandler;
-import Utils.SpelerSession;
-
-import java.util.ArrayList;
-=======
 package monster;
->>>>>>> Jokertest:ScrumGame/src/main/java/monster/MonsterChallenge.java
+
+import usableitems.IUsableItem;
+import utils.SpelerInputHandler;
+import utils.SpelerSession;
+
 
 public class MonsterChallenge {
     private MonsterVerschijning monsterVerschijning;
     private MonsterDobbelsteen monsterDobbelsteen;
     private MonsterNieuweVraag monsterNieuweVraag;
-<<<<<<< HEAD:ScrumGame/src/main/java/Monster/MonsterChallenge.java
-    private HitMonster hitMonster;
-    private MonsterVraagBeheer vraagBeheer;
-=======
     private monsterVraagBeheer vraagBeheer;
->>>>>>> Jokertest:ScrumGame/src/main/java/monster/MonsterChallenge.java
+    private HitMonster hitMonster;
 
     public MonsterChallenge(String monsterNaam) {
         monsterVerschijning = new MonsterVerschijning(monsterNaam);
@@ -32,8 +23,8 @@ public class MonsterChallenge {
     public void startChallenge() {
         monsterVerschijning.uitvoeren();
         boolean verslagen = false;
-        for (I_UsableItem item : SpelerSession.getSpeler().getItems()) {
-             if (item instanceof Zwaard) {
+        for (IUsableItem item : SpelerSession.getSpeler().getItems()) {
+             if (item instanceof usableitems.Zwaard) {
                  System.out.println("Wil je je zwaard gebruiken om te proberen het monster te verslaan? (j/n)");
                  if (SpelerInputHandler.spelerAntwoord().equals("j")) {
                      item.gebruik();

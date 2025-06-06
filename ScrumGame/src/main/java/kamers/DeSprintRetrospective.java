@@ -1,15 +1,9 @@
 package kamers;
 
-<<<<<<< HEAD:ScrumGame/src/main/java/Kamers/DeSprintRetrospective.java
-import GameLogic.Game;
-import UsableItems.Komkommer;
-import Utils.SpelerSession;
-import Vragen.Vraag;
-=======
 import gamelogic.Game;
 import usableitems.Komkommer;
+import utils.SpelerSession;
 import vragen.Vraag;
->>>>>>> Jokertest:ScrumGame/src/main/java/kamers/DeSprintRetrospective.java
 
 public class DeSprintRetrospective extends Kamer {
 

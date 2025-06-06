@@ -1,9 +1,9 @@
 package joker;
 
 import kamers.Kamer;
-import usableitems.IUsebleItem;
+import usableitems.IUsableItem;
 
-public class HintJoker extends JokerBase implements IUsebleItem {
+public class HintJoker extends JokerBase implements IUsableItem {
     @Override
     public String getName() {
         return "HintJoker";

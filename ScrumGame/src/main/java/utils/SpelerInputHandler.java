@@ -1,12 +1,6 @@
-<<<<<<< HEAD:ScrumGame/src/main/java/Utils/SpelerInputHandler.java
-package Utils;
-
-import UsableItems.I_UsableItem;
-=======
 package utils;
->>>>>>> Jokertest:ScrumGame/src/main/java/utils/SpelerInputHandler.java
 
-import usableitems.IUsebleItem;
+import usableitems.IUsableItem;
 import java.util.Scanner;
 
 public class SpelerInputHandler {
@@ -18,11 +12,7 @@ public class SpelerInputHandler {
             System.out.println(SpelerSession.getSpeler().getStatus());
             spelerAntwoord = scanner.nextLine();
         }
-<<<<<<< HEAD:ScrumGame/src/main/java/Utils/SpelerInputHandler.java
-        for (I_UsableItem item : SpelerSession.getSpeler().getItems()) {
-=======
-        for (IUsebleItem item : SpelerSession.getSpeler().getItems()) {
->>>>>>> Jokertest:ScrumGame/src/main/java/utils/SpelerInputHandler.java
+        for (IUsableItem item : SpelerSession.getSpeler().getItems()) {
             if (spelerAntwoord.equalsIgnoreCase(item.getName())) {
                 item.gebruik();
                 SpelerSession.getSpeler().removeItem(item.getName());

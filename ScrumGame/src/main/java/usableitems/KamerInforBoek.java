@@ -1,19 +1,12 @@
 package usableitems;
 
-<<<<<<< HEAD:ScrumGame/src/main/java/UsableItems/KamerInforBoek.java
-public class KamerInforBoek extends UsableItem implements I_Informatie, I_UsableItem {
+public class KamerInforBoek extends UsableItem implements I_Informatie, IUsableItem {
     private String informatie;
 
     public void ShowInfo() {
         System.out.println("Dit is de informatie die we gaan geven over deze kamer:");
         System.out.println(informatie);
     }
-=======
-public class KamerInforBoek extends UsableItem implements IInformatie, IUsebleItem {
-    //public void ShowInfo() {
-//
-   // }
->>>>>>> Jokertest:ScrumGame/src/main/java/usableitems/KamerInforBoek.java
 
 
     public KamerInforBoek(String informatie) {

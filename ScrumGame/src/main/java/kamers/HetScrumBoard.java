@@ -1,15 +1,9 @@
 package kamers;
 
-<<<<<<< HEAD:ScrumGame/src/main/java/Kamers/HetScrumBoard.java
-import UsableItems.Komkommer;
-import GameLogic.Game;
-import Utils.SpelerSession;
-import Vragen.Vraag;
-=======
 import usableitems.Komkommer;
 import gamelogic.Game;
+import utils.SpelerSession;
 import vragen.Vraag;
->>>>>>> Jokertest:ScrumGame/src/main/java/kamers/HetScrumBoard.java
 
 public class HetScrumBoard extends Kamer {
 

@@ -6,13 +6,10 @@ import utils.SpelerInputHandler;
 import utils.SpelerSession;
 
 public class GameStarter {
-    private final SaveSystemInterface saveSystem;
+    private SaveSystemInterface saveSystem;
 
     public GameStarter() {
         this.saveSystem = new SaveSystem();
-    }
-    public GameStarter(SaveSystemInterface saveSystem) {
-        this.saveSystem = saveSystem;
     }
     public void printInstructies () {
         if (SpelerSession.getSpeler() == null) {

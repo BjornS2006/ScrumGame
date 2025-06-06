@@ -1,17 +1,11 @@
 package kamers;
 
-<<<<<<< HEAD:ScrumGame/src/main/java/Kamers/DeSprintReview.java
-import GameLogic.Game;
-import UsableItems.JeffDeAssistent;
-import UsableItems.Komkommer;
-import Utils.SpelerSession;
-import Vragen.Vraag;
-=======
 import gamelogic.Game;
 import joker.IKeyJoker;
 import usableitems.Komkommer;
+import utils.SpelerSession;
 import vragen.Vraag;
->>>>>>> Jokertest:ScrumGame/src/main/java/kamers/DeSprintReview.java
+import usableitems.JeffDeAssistent;
 
 public class DeSprintReview extends Kamer implements IKeyJoker {
 

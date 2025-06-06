@@ -1,10 +1,6 @@
 package usableitems;
 
-<<<<<<< HEAD:ScrumGame/src/main/java/UsableItems/UsableItem.java
-public abstract class UsableItem implements I_UsableItem {
-=======
-public abstract class UsableItem implements IUsebleItem {
->>>>>>> Jokertest:ScrumGame/src/main/java/usableitems/UsableItem.java
+public abstract class UsableItem implements IUsableItem {
     private String name;
     private String description;
 

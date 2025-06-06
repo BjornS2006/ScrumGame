@@ -1,16 +1,9 @@
 package kamers;
 
-<<<<<<< HEAD:ScrumGame/src/main/java/Kamers/Finale.java
-import GameLogic.Speler;
-import UsableItems.JeffDeAssistent;
-import UsableItems.Komkommer;
-import Vragen.Vraag;
-import Utils.*;
-=======
 import usableitems.Komkommer;
 import vragen.Vraag;
 import utils.*;
->>>>>>> Jokertest:ScrumGame/src/main/java/kamers/Finale.java
+import usableitems.JeffDeAssistent;
 
 public class Finale extends Kamer {
     SaveSystemInterface saveSystem = new SaveSystem();

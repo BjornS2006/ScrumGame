@@ -1,6 +1,6 @@
-package UsableItems;
+package usableitems;
 
-public class Zwaard extends UsableItem implements I_UsableItem, I_Wapen{
+public class Zwaard extends UsableItem implements IUsableItem, IWapen{
     public void ValAan() {
         System.out.println("Swoosh!");
     }
