@@ -1,6 +1,6 @@
 package usableitems;
 
-public class JeffDeAssistent extends UsableItem implements I_Informatie {
+public class JeffDeAssistent extends UsableItem implements IInformatie {
 
     private String informatie;
 

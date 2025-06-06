@@ -3,8 +3,8 @@ package utils;
 import gamelogic.Speler;
 import gamelogic.Status;
 import com.google.gson.*;
-import usableitems.IUsebleItem;
-import usableitems.Zwaart;
+import usableitems.IUsableItem;
+import usableitems.Zwaard;
 import usableitems.Komkommer;
 import usableitems.KamerInforBoek;
 import joker.KeyJoker;
@@ -18,13 +18,13 @@ import java.io.File;
 public class SaveSystem implements SaveSystemInterface {
     private static final String FILE_PATH = "Save.json";
     private static final Gson gson = new GsonBuilder()
-            .registerTypeAdapter(IUsebleItem.class, new JsonDeserializer<IUsebleItem>() {
+            .registerTypeAdapter(IUsableItem.class, new JsonDeserializer<IUsableItem>() {
                 @Override
-                public IUsebleItem deserialize(JsonElement json, java.lang.reflect.Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+                public IUsableItem deserialize(JsonElement json, java.lang.reflect.Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
                     JsonObject obj = json.getAsJsonObject();
                     String type = obj.get("type").getAsString();
                     return switch (type) {
-                        case "Zwaart" -> context.deserialize(json, Zwaart.class);
+                        case "Zwaart" -> context.deserialize(json, Zwaard.class);
                         case "Komkommer" -> context.deserialize(json, Komkommer.class);
                         case "KamerInforBoek" -> context.deserialize(json, KamerInforBoek.class);
                         case "KeyJoker" -> context.deserialize(json, KeyJoker.class);
@@ -33,7 +33,7 @@ public class SaveSystem implements SaveSystemInterface {
                     };
                 }
             })
-            .registerTypeAdapter(IUsebleItem.class, (JsonSerializer<IUsebleItem>) (src, typeOfSrc, context) -> {
+            .registerTypeAdapter(IUsableItem.class, (JsonSerializer<IUsableItem>) (src, typeOfSrc, context) -> {
                 JsonObject obj = (JsonObject) context.serialize(src, src.getClass());
                 obj.addProperty("type", src.getClass().getSimpleName());
                 return obj;
