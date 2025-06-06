@@ -15,7 +15,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
 
-public class SaveSystem implements SaveSystemInterface {
+public class SaveSystem implements utils.SaveSystemInterface {
     private static final String FILE_PATH = "Save.json";
     private static final Gson gson = new GsonBuilder()
             .registerTypeAdapter(IUsebleItem.class, new JsonDeserializer<IUsebleItem>() {
