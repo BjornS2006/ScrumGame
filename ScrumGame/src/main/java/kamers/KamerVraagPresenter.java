@@ -11,29 +11,17 @@ public class KamerVraagPresenter {
 
     public void stelVragen(KamerVraagManager vraagManager) {
         for (Vraag vraag : vraagManager.getVragen()) {
+            SpelerSession.getSpeler().getStatus().setHuidigeVraag(vraag);
             vraag.stelVraag();
-            System.out.println("Als je een item wilt gebruiken, nu is je moment!");
-            for (IUsableItem item : SpelerSession.getSpeler().getItems()) {
-                if (SpelerInputHandler.spelerAntwoord().equalsIgnoreCase(item.getName())) {
-                    break;
-                } else {
-                    break;
-                }
-            }
+            System.out.println("Typ je antwoord of de naam van een item dat je wilt gebruiken:");
+
 
             boolean goedOfFout = vraag.controleerAntwoord();
 
             if (goedOfFout) {
                 vraag.stuurUpdateVoorAntwoord(true);
-                System.out.println("Volgende vraag!");
             } else {
-                System.out.println("Wil je een hint?");
-                String aapje = SpelerInputHandler.spelerAntwoord();
-                if (aapje.equalsIgnoreCase("Ja")) {
-                    HintPresenter hintPresenter = new HintPresenter(vraag);
-                    hintPresenter.presentHint();
-                }
-                vraag.stuurUpdateVoorAntwoord(false); // Monster challenge pas na hint
+                vraag.stuurUpdateVoorAntwoord(false);
             }
         }
     }

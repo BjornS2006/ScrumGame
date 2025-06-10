@@ -1,5 +1,5 @@
 package usableitems;
 
 public interface IWapen {
-    //public void ValAan();
+    public void ValAan();
 }

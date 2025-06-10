@@ -7,5 +7,7 @@ public class Komkommer extends UsableItem implements IUsableItem, IMagie {
 
     public void gebruik () {
         System.out.println("Hallo ik ben een komkommer, je hebt niks aan me.");
+
     }
+
 }

@@ -24,7 +24,7 @@ public class SaveSystem implements SaveSystemInterface {
                     JsonObject obj = json.getAsJsonObject();
                     String type = obj.get("type").getAsString();
                     return switch (type) {
-                        case "Zwaart" -> context.deserialize(json, Zwaard.class);
+                        case "Zwaard" -> context.deserialize(json, Zwaard.class);
                         case "Komkommer" -> context.deserialize(json, Komkommer.class);
                         case "KamerInforBoek" -> context.deserialize(json, KamerInforBoek.class);
                         case "KeyJoker" -> context.deserialize(json, KeyJoker.class);

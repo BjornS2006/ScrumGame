@@ -1,12 +1,16 @@
 package gamelogic;
 
+import kamers.Kamer;
 import utils.SaveSystemInterface;
 import utils.SpelerSession;
+import vragen.Vraag;
 
 public class Status implements Update {
     private int score;
     private String positie;
     private transient SaveSystemInterface saveSystem;
+    private transient Kamer actieveKamer;
+    private transient Vraag huidigeVraag;
 
     public Status(int score, String positie, SaveSystemInterface saveSystem) {
         this.score = score;
@@ -35,5 +39,21 @@ public class Status implements Update {
     }
     public void setSaveSystem(SaveSystemInterface saveSystem) {
         this.saveSystem = saveSystem;
+    }
+
+    public Kamer getActieveKamer() {
+        return actieveKamer;
+    }
+
+    public void setActieveKamer(Kamer actieveKamer) {
+        this.actieveKamer = actieveKamer;
+    }
+
+    public Vraag getHuidigeVraag() {
+        return huidigeVraag;
+    }
+
+    public void setHuidigeVraag(Vraag huidigeVraag) {
+        this.huidigeVraag = huidigeVraag;
     }
 }

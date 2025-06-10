@@ -1,6 +1,7 @@
 package usableitems;
 
 public class Zwaard extends UsableItem implements IUsableItem, IWapen{
+    @Override
     public void ValAan() {
         System.out.println("Swoosh!");
     }

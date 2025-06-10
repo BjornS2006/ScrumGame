@@ -47,8 +47,20 @@ public class Speler {
 
         @Override
         public String toString() {
-            return "Speler{" +
-                    "status=" + status.getPositie() +" " + getStatus().getScore() +
-                    '}';
+            return "Kamer: " + status.getPositie() + System.lineSeparator() +
+                    "Score: " + getStatus().getScore() + System.lineSeparator() +
+                    "Inventory: " + itemsToString()
+                    ;
+        }
+
+        public String itemsToString () {
+            StringBuilder sb = new StringBuilder();
+            for (IUsableItem item : items) {
+                sb.append(item.getName()).append(", ");
+            }
+            if (!sb.isEmpty()) {
+                sb.setLength(sb.length() - 2); // Remove trailing comma and space
+            }
+            return sb.toString();
         }
 }

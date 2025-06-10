@@ -16,13 +16,8 @@ public class KeyJoker extends JokerBase implements IUsableItem {
 
     @Override
     public void gebruik() {
-        // Gebruik zonder kamercontext doet niets
     }
 
-    /**
-     * Kan alleen gebruikt worden in KeyJokerUsable kamers (DeDailyScrum, DeSprintReview).
-     * Skipt de kamer en markeert zichzelf als gebruikt.
-     */
     public void useIn(Kamer kamer) {
         if (isUsed()) {
             System.out.println("Je hebt de KeyJoker al gebruikt.");
