@@ -24,12 +24,20 @@ public class Speler {
             }
         }
 
-        public Speler (Status status) {
-            this.status = status;
-            items = new ArrayList<>();
-            Komkommer komkommer = new Komkommer();
-            items.add(komkommer);
-        }
+    public Speler(Status status) {
+        this.status = status;
+        items = new ArrayList<>();
+        Komkommer komkommer = new Komkommer();
+        items.add(komkommer);
+        jokerReceived = false;
+        firstItemReceived = false;
+        secondItemReceived = false;
+        thirdItemReceived = false;
+        fourthItemReceived = false;
+        fifthItemReceived = false;
+        sixthItemReceived = false;
+        hintUsed = false;
+    }
         public Status getStatus () {
             return status;
         }
