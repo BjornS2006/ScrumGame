@@ -2,25 +2,21 @@ package monster;
 
 import usableitems.IUsableItem;
 
-import usableitems.UsableItem;
-import usableitems.Zwaard;
 import utils.SpelerInputHandler;
 import utils.SpelerSession;
+import vragen.Vraag;
+
 import java.util.Iterator;
 
 
 public class MonsterChallenge {
     private MonsterVerschijning monsterVerschijning;
-    private MonsterDobbelsteen monsterDobbelsteen;
-    private MonsterNieuweVraag monsterNieuweVraag;
-    private monsterVraagBeheer vraagBeheer;
+    private MonsterVraagBeheer vraagBeheer;
     private HitMonster hitMonster;
 
     public MonsterChallenge(String monsterNaam) {
         monsterVerschijning = new MonsterVerschijning(monsterNaam);
-        monsterDobbelsteen = new MonsterDobbelsteen();
-        vraagBeheer = new monsterVraagBeheer();
-        monsterNieuweVraag = new MonsterNieuweVraag(vraagBeheer);
+        vraagBeheer = new MonsterVraagBeheer();
         hitMonster = new HitMonster();
     }
 
@@ -60,13 +56,32 @@ public class MonsterChallenge {
             }
         }
         if (!verslagen) {
-            monsterDobbelsteen.uitvoeren();
-            if (monsterDobbelsteen.getKeuze() == 1) {
-                System.out.println("De monster geeft het correcte antwoord...");
-                new MonsterAntwoordControle("Correcte Antwoord", vraagBeheer).uitvoeren();
-            } else {
-                monsterNieuweVraag.uitvoeren();
+            int incorrectAnswerCount = 0;
+            System.out.println("Je moet het monster verslaan door een vraag goed te beantwoorden!");
+            System.out.println("Het monster stelt zijn eerste vraag...");
+            for (Vraag vraag : vraagBeheer.getVragen()) {
+                vraag.stelVraag();
+                if (vraag.controleerAntwoord()) {
+                    System.out.println("Correct! Je mag verder spelen.");
+                    System.out.println("Het monster trekt zich terug...");
+                    break;
+                }
+                else {
+                    incorrectAnswerCount++;
+                    if (incorrectAnswerCount == 2) {
+                        System.out.println("Fout! Je hebt het monster niet kunnen verslaan. Je bent verslagen en wordt terug naar het begin gestuurd!");
+                        SpelerSession.getSpeler().getStatus().resetNaarBegin();
+                        System.exit(0);
+                        return;
+                    } else {
+                        System.out.println("Fout! Je hebt nog 1 kans om een vraag goed te beantwoorden!");
+                    }
+                }
             }
+
         }
+    }
+    public MonsterVraagBeheer getVraagBeheer() {
+        return vraagBeheer;
     }
 }

@@ -24,6 +24,27 @@ public class Game {
         Vraag vraag = new Vraag(weergave, controle, monster, helpHintProvider);
 
 
+        // Nieuwe random meerkeuzevraag 1
+        MeerkeuzeWeergave weergave2 = new MeerkeuzeWeergave("Wat is de hoofdstad van Frankrijk?");
+        weergave2.addAntwoord("A: Parijs");
+        weergave2.addAntwoord("B: Londen");
+        weergave2.addAntwoord("C: Berlijn");
+        MeerkeuzeControle controle2 = new MeerkeuzeControle("A");
+        HelpHintProvider helpHintProvider2 = new HelpHintProvider("Het is bekend om de Eiffeltoren.");
+        Vraag monsterVraag1 = new Vraag(weergave2, controle2, monster, helpHintProvider2);
+        monster.getChallenge().getVraagBeheer().voegVraagToe(monsterVraag1);
+
+        // Nieuwe random meerkeuzevraag 2
+        MeerkeuzeWeergave weergave3 = new MeerkeuzeWeergave("Welke planeet staat het dichtst bij de zon?");
+        weergave3.addAntwoord("A: Venus");
+        weergave3.addAntwoord("B: Mercurius");
+        weergave3.addAntwoord("C: Mars");
+        MeerkeuzeControle controle3 = new MeerkeuzeControle("B");
+        HelpHintProvider helpHintProvider3 = new HelpHintProvider("Het is de kleinste planeet in ons zonnestelsel.");
+        Vraag monsterVraag2 = new Vraag(weergave3, controle3, monster, helpHintProvider3);
+        monster.getChallenge().getVraagBeheer().voegVraagToe(monsterVraag2);
+
+
         vraag.addObserver(monster);
         vraag.addObserver(SpelerSession.getSpeler().getStatus());
         kamer1.addVraag(vraag);

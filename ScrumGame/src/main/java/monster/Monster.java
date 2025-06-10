@@ -32,4 +32,7 @@ public class Monster implements Update {
         }
     }
 
+    public MonsterChallenge getChallenge() {
+        return challenge;
+    }
 }

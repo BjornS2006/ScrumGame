@@ -1,6 +1,7 @@
 package gamelogic;
 
 import kamers.Kamer;
+import utils.SaveSystem;
 import utils.SaveSystemInterface;
 import utils.SpelerSession;
 import vragen.Vraag;
@@ -55,5 +56,8 @@ public class Status implements Update {
 
     public void setHuidigeVraag(Vraag huidigeVraag) {
         this.huidigeVraag = huidigeVraag;
+    }
+    public void resetNaarBegin () {
+        saveSystem.reset();
     }
 }
