@@ -21,8 +21,11 @@ public class DeSprintRetrospective extends Kamer {
 
         System.out.println("Welkom in de 5de kamer.");
         System.out.println("Deze kamer gaat over de Sprint Retrospective");
-        System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
-        System.out.println(item.getDescription());
+        if (!SpelerSession.getSpeler().isFifthItemReceived()) {
+            System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
+            System.out.println(item.getDescription());
+            SpelerSession.getSpeler().setFifthItemReceived(true);
+        }
         System.out.println("Beantwoord de volgende vraag:");
     }
 

@@ -24,7 +24,7 @@ public class SpelerInputHandler {
                         break;
                     } else {
                         item.gebruik();
-                        continue;
+                        break;
                     }
                 }
             }
@@ -33,12 +33,17 @@ public class SpelerInputHandler {
             }
 
             if (spelerAntwoord.equalsIgnoreCase("hint")) {
-                HintPresenter hintPresenter = new HintPresenter(SpelerSession.getSpeler().getStatus().getHuidigeVraag());
-                hintPresenter.presentHint();
+                if (!SpelerSession.getSpeler().isHintUsed()) {
+                    HintPresenter hintPresenter = new HintPresenter(SpelerSession.getSpeler().getStatus().getHuidigeVraag());
+                    hintPresenter.presentHint();
+                    SpelerSession.getSpeler().setHintUsed(true);
+                }
+                else {
+                    System.out.println("Je hebt al een hint gebruikt in deze kamer.");
+                }
             }
             if (spelerAntwoord.equalsIgnoreCase("status")) {
                 System.out.println(SpelerSession.getSpeler().toString());
-                spelerAntwoord = scanner.nextLine();
             }
         } while (
                 spelerAntwoord.equalsIgnoreCase("status") ||

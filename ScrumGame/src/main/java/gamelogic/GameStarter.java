@@ -26,20 +26,22 @@ public class GameStarter {
         System.out.println("In elk van deze kamers moeten een aantal vragen beantwoordt worden.");
         System.out.println("Elke kamer gaat over een ander onderwerp binnen scrum.");
         System.out.println("Als je een vraag fout beantwoordt krijg je een nieuwe uitdaging om de vraag te corrigeren.");
-        System.out.println("Kies aan het begin van het spel één joker:");
-        System.out.println("1. HintJoker (in alle kamers een hint)");
-        System.out.println("2. KeyJoker (alleen inzetbaar in Daily Scrum en Review)");
-        System.out.print("Typ 1 of 2 en druk op enter: ");
-        String keuze = SpelerInputHandler.spelerAntwoord();
-        if (keuze.trim().equals("1")) {
-            SpelerSession.getSpeler().addItem(new joker.HintJoker());
-            System.out.println("Je hebt gekozen voor de HintJoker!");
-        } else if (keuze.trim().equals("2")) {
-            SpelerSession.getSpeler().addItem(new joker.KeyJoker());
-            System.out.println("Je hebt gekozen voor de KeyJoker!");
-        } else {
-            System.out.println("Ongeldige keuze. Je krijgt standaard de HintJoker.");
-            SpelerSession.getSpeler().addItem(new joker.HintJoker());
+        if (!SpelerSession.getSpeler().isJokerReceived()) {
+            System.out.println("Kies aan het begin van het spel één joker:");
+            System.out.println("1. HintJoker (in alle kamers een hint)");
+            System.out.println("2. KeyJoker (alleen inzetbaar in Daily Scrum en Review)");
+            System.out.print("Typ 1 of 2 en druk op enter: ");
+            String keuze = SpelerInputHandler.spelerAntwoord();
+            if (keuze.trim().equals("1")) {
+                SpelerSession.getSpeler().addItem(new joker.HintJoker());
+                System.out.println("Je hebt gekozen voor de HintJoker!");
+            } else if (keuze.trim().equals("2")) {
+                SpelerSession.getSpeler().addItem(new joker.KeyJoker());
+                System.out.println("Je hebt gekozen voor de KeyJoker!");
+            } else {
+                System.out.println("Ongeldige keuze. Je krijgt standaard de HintJoker.");
+                SpelerSession.getSpeler().addItem(new joker.HintJoker());
+            }
         }
         System.out.println("Druk op enter om het spel te beginnen.");
         SpelerInputHandler.spelerAntwoord();

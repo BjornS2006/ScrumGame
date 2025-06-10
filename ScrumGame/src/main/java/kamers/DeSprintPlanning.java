@@ -20,8 +20,11 @@ public class DeSprintPlanning extends Kamer {
 
         System.out.println("Welkom in de eerste kamer.");
         System.out.println("Deze kamer gaat over De Sprint Planning");
-        System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
-        System.out.println(item.getDescription());
+        if (!SpelerSession.getSpeler().isFirstItemReceived()) {
+            System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
+            System.out.println(item.getDescription());
+            SpelerSession.getSpeler().setFirstItemReceived(true);
+        }
         System.out.println("Beanwoord de volgende vraag:");
     }
 

@@ -21,6 +21,7 @@ public abstract class Kamer {
 
     public void speelKamer() {
         SpelerSession.getSpeler().getStatus().setActieveKamer(this);
+        SpelerSession.getSpeler().setHintUsed(false);
         enter();
         stelVraag();
         naarVolgendeKamer();

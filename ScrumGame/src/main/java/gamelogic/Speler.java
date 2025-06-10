@@ -6,6 +6,14 @@ import java.util.ArrayList;
 public class Speler {
         private Status status;
         private ArrayList <IUsableItem> items;
+        private boolean jokerReceived = false;
+        private boolean firstItemReceived = false;
+        private boolean secondItemReceived = false;
+        private boolean thirdItemReceived = false;
+        private boolean fourthItemReceived = false;
+        private boolean fifthItemReceived = false;
+        private boolean sixthItemReceived = false;
+        private boolean hintUsed = false;
 
         public void removeItem (String ItemName) {
             for(IUsableItem item : items) {
@@ -63,4 +71,68 @@ public class Speler {
             }
             return sb.toString();
         }
+
+    public void setJokerReceived(boolean jokerReceived) {
+        this.jokerReceived = jokerReceived;
+    }
+
+    public void setFirstItemReceived(boolean firstItemReceived) {
+        this.firstItemReceived = firstItemReceived;
+    }
+
+    public void setSecondItemReceived(boolean secondItemReceived) {
+        this.secondItemReceived = secondItemReceived;
+    }
+
+    public void setThirdItemReceived(boolean thirdItemReceived) {
+        this.thirdItemReceived = thirdItemReceived;
+    }
+
+    public void setFourthItemReceived(boolean fourthItemReceived) {
+        this.fourthItemReceived = fourthItemReceived;
+    }
+
+    public void setFifthItemReceived(boolean fifthItemReceived) {
+        this.fifthItemReceived = fifthItemReceived;
+    }
+
+    public void setSixthItemReceived(boolean sixthItemReceived) {
+        this.sixthItemReceived = sixthItemReceived;
+    }
+
+    public void setHintUsed(boolean hintUsed) {
+        this.hintUsed = hintUsed;
+    }
+
+    public boolean isJokerReceived() {
+        return jokerReceived;
+    }
+
+    public boolean isFirstItemReceived() {
+        return firstItemReceived;
+    }
+
+    public boolean isSecondItemReceived() {
+        return secondItemReceived;
+    }
+
+    public boolean isThirdItemReceived() {
+        return thirdItemReceived;
+    }
+
+    public boolean isFourthItemReceived() {
+        return fourthItemReceived;
+    }
+
+    public boolean isFifthItemReceived() {
+        return fifthItemReceived;
+    }
+
+    public boolean isSixthItemReceived() {
+        return sixthItemReceived;
+    }
+
+    public boolean isHintUsed() {
+        return hintUsed;
+    }
 }
