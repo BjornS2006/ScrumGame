@@ -1,9 +1,9 @@
+// src/main/java/joker/HintJoker.java
 package joker;
 
 import kamers.Kamer;
-import usableitems.IUsableItem;
 
-public class HintJoker extends JokerBase implements IUsableItem {
+public class HintJoker extends JokerBase {
     @Override
     public String getName() {
         return "HintJoker";
@@ -15,16 +15,7 @@ public class HintJoker extends JokerBase implements IUsableItem {
     }
 
     @Override
-    public void gebruik() {
-        // Gebruik zonder kamercontext doet niets
-    }
-
-    public void useIn(Kamer kamer) {
-        if (!isUsed()) {
-            kamer.showJokerHint();
-            markUsed();
-        } else {
-            System.out.println("Je hebt de HintJoker al gebruikt.");
-        }
+    protected void doUseIn(Kamer kamer) {
+        kamer.showJokerHint();
     }
 }

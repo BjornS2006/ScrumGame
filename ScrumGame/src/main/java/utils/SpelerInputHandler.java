@@ -22,10 +22,9 @@ public class SpelerInputHandler {
                     if (spelerAntwoord.equalsIgnoreCase("zwaard")) {
                         System.out.println("Je kan het zwaard alleen gebruiken als je een monster bent tegengekomen.");
                         break;
-                    }
-                    else {
+                    } else {
                         item.gebruik();
-                        break;
+                        continue;
                     }
                 }
             }
@@ -41,9 +40,28 @@ public class SpelerInputHandler {
                 System.out.println(SpelerSession.getSpeler().toString());
                 spelerAntwoord = scanner.nextLine();
             }
-        }while (spelerAntwoord.equalsIgnoreCase("status") || spelerAntwoord.equalsIgnoreCase("hint") || spelerAntwoord.equalsIgnoreCase("infoboek") || spelerAntwoord.equalsIgnoreCase("zwaard") || spelerAntwoord.equalsIgnoreCase("assistent") || spelerAntwoord.equalsIgnoreCase("komkommer"));
+        } while (
+                spelerAntwoord.equalsIgnoreCase("status") ||
+                        spelerAntwoord.equalsIgnoreCase("hint") ||
+                        spelerAntwoord.equalsIgnoreCase("infoboek") ||
+                        spelerAntwoord.equalsIgnoreCase("zwaard") ||
+                        spelerAntwoord.equalsIgnoreCase("assistent") ||
+                        spelerAntwoord.equalsIgnoreCase("komkommer") ||
+                        spelerAntwoord.equalsIgnoreCase("hintjoker") ||
+                        spelerAntwoord.equalsIgnoreCase("keyjoker") ||
+                        isUsableItemInput(spelerAntwoord)
+        );
 
         return spelerAntwoord;
+    }
+
+    private static boolean isUsableItemInput(String input) {
+        for (IUsableItem item : SpelerSession.getSpeler().getItems()) {
+            if (input.equalsIgnoreCase(item.getName())) {
+                return true;
+            }
+        }
+        return false;
     }
 
 
