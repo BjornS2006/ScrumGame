@@ -1,12 +1,8 @@
 package kamers;
 
 import usableitems.UsableItem;
-import joker.HintJoker;
-import joker.KeyJoker;
-import usableitems.IUsableItem;
-import utils.SpelerInputHandler;
 import utils.SpelerSession;
-import vragen.Vraag;
+
 
 public abstract class Kamer {
     protected String naam;

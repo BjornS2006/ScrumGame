@@ -1,4 +1,4 @@
-// src/main/java/vragen/AbstracteVraagControle.java
+
 package vragen;
 
 import utils.SpelerInputHandler;

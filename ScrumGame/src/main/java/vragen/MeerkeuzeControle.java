@@ -1,4 +1,4 @@
-// src/main/java/vragen/MeerkeuzeControle.java
+
 package vragen;
 
 public class MeerkeuzeControle extends AbstracteVraagControle {

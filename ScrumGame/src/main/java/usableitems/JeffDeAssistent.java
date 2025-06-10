@@ -4,7 +4,7 @@ public class JeffDeAssistent extends UsableItem implements IInformatie {
 
     private String informatie;
 
-    public void ShowInfo() {
+    public void showInfo() {
         System.out.println("Jeff zegt:");
         System.out.println(informatie);
     }
@@ -16,7 +16,7 @@ public class JeffDeAssistent extends UsableItem implements IInformatie {
     }
 
     public void gebruik() {
-        ShowInfo();
+        showInfo();
     }
 
 }

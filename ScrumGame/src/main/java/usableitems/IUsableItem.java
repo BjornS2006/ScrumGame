@@ -2,10 +2,10 @@ package usableitems;
 
 
 public interface IUsableItem {
-    public String getName();
+    String getName();
 
-    public String getDescription();
+    String getDescription();
 
-    public void gebruik();
+    void gebruik();
 }
 

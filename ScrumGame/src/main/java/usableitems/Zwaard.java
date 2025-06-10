@@ -2,7 +2,7 @@ package usableitems;
 
 public class Zwaard extends UsableItem implements IUsableItem, IWapen{
     @Override
-    public void ValAan() {
+    public void valAan() {
         System.out.println("Swoosh!");
     }
 
@@ -12,6 +12,6 @@ public class Zwaard extends UsableItem implements IUsableItem, IWapen{
 
     public void gebruik (){
         System.out.println("Je zwaait je zwaard naar het monster!");
-        ValAan();
+        valAan();
     }
 }

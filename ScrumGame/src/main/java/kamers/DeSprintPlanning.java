@@ -1,7 +1,6 @@
 package kamers;
 
 import gamelogic.Game;
-import usableitems.Komkommer;
 import usableitems.Zwaard;
 import utils.SpelerSession;
 import vragen.Vraag;

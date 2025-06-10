@@ -5,7 +5,6 @@ import usableitems.IUsableItem;
 
 import java.util.Scanner;
 
-import static joker.JokerHandler.handleJokerUsage;
 
 public class SpelerInputHandler {
 

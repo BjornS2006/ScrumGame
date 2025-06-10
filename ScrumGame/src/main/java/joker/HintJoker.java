@@ -1,4 +1,4 @@
-// src/main/java/joker/HintJoker.java
+
 package joker;
 
 import kamers.Kamer;

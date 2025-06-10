@@ -1,8 +1,5 @@
 package kamers;
 
-import hintsysteem.HintPresenter;
-import usableitems.IUsableItem;
-import utils.SpelerInputHandler;
 import utils.SpelerSession;
 import vragen.Vraag;
 

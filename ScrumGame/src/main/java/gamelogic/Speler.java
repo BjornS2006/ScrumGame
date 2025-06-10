@@ -6,23 +6,15 @@ import java.util.ArrayList;
 public class Speler {
         private Status status;
         private ArrayList <IUsableItem> items;
-        private boolean jokerReceived = false;
-        private boolean firstItemReceived = false;
-        private boolean secondItemReceived = false;
-        private boolean thirdItemReceived = false;
-        private boolean fourthItemReceived = false;
-        private boolean fifthItemReceived = false;
-        private boolean sixthItemReceived = false;
-        private boolean hintUsed = false;
+        private boolean jokerReceived;
+        private boolean firstItemReceived;
+        private boolean secondItemReceived;
+        private boolean thirdItemReceived;
+        private boolean fourthItemReceived;
+        private boolean fifthItemReceived;
+        private boolean sixthItemReceived;
+        private boolean hintUsed;
 
-        public void removeItem (String ItemName) {
-            for(IUsableItem item : items) {
-                if(item.getName().equals(ItemName)) {
-                    items.remove(item);
-                    break;
-                }
-            }
-        }
 
     public Speler(Status status) {
         this.status = status;

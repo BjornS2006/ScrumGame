@@ -1,7 +1,6 @@
 package gamelogic;
 
 import kamers.Kamer;
-import utils.SaveSystem;
 import utils.SaveSystemInterface;
 import utils.SpelerSession;
 import vragen.Vraag;

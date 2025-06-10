@@ -3,7 +3,7 @@ package usableitems;
 public class KamerInforBoek extends UsableItem implements IInformatie, IUsableItem {
     private String informatie;
 
-    public void ShowInfo() {
+    public void showInfo() {
         System.out.println("Dit is de informatie die we gaan geven over deze kamer:");
         System.out.println(informatie);
     }
@@ -15,7 +15,7 @@ public class KamerInforBoek extends UsableItem implements IInformatie, IUsableIt
     }
 
     public void gebruik() {
-        ShowInfo();
+        showInfo();
     }
 
 }

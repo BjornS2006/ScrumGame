@@ -1,12 +1,11 @@
 package kamers;
 
-import usableitems.Komkommer;
 import vragen.Vraag;
 import utils.*;
 import usableitems.JeffDeAssistent;
 
 public class Finale extends Kamer {
-    SaveSystemInterface saveSystem = new SaveSystem();
+    SaveSystemInterface saveSystem;
 
     public Finale() {
         super("Finale",  new JeffDeAssistent("Hint: Het is de laatste vraag, ik zou gewoon gokken. \n Educatief hulpmiddel: Hier is een stappenplan: \n Lees de som: 12 × 2\nBegrijp dat het betekent: 12 keer 2\nTel 2 twaalf keer op: 2 + 2 + ... = ?\nOf reken: 10 × 2 + 2 × 2 = 20 + 4 = ?\nControleer je antwoord\nAntwoord: ??\n En je weet wat ze zeggen: \n Yesterday was history... Tomorrow is a mystery... But today is gift, that's why it's called the presend \n ~Master Oogway"));
