@@ -64,7 +64,7 @@ public class Status implements Update {
     }
 
     public void resetNaarBegin() {
-        saveSystem.reset();
+        SpelerSession.clear();
     }
     public void save () {
         saveSystem.saveGame(SpelerSession.getSpeler());
