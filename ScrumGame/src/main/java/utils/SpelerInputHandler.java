@@ -74,7 +74,7 @@ public class SpelerInputHandler {
         if (input.equalsIgnoreCase("exit")) {
             System.exit(0);
         } else if (input.equalsIgnoreCase("restart")) {
-            return;
+            SpelerSession.getSpeler().getStatus().resetNaarBegin();
         } else {
             System.out.println("Ongeldige invoer. Typ 'exit' om het spel te beëindigen of 'restart' om opnieuw te beginnen.");
             eindeSpel();
