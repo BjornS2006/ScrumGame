@@ -49,7 +49,7 @@ public class SpelerInputHandler {
                         spelerAntwoord.equalsIgnoreCase("hint") ||
                         spelerAntwoord.equalsIgnoreCase("infoboek") ||
                         spelerAntwoord.equalsIgnoreCase("zwaard") ||
-                        spelerAntwoord.equalsIgnoreCase("assistent") ||
+                        spelerAntwoord.equalsIgnoreCase("jeff") ||
                         spelerAntwoord.equalsIgnoreCase("komkommer") ||
                         spelerAntwoord.equalsIgnoreCase("hintjoker") ||
                         spelerAntwoord.equalsIgnoreCase("keyjoker") ||

@@ -2,27 +2,28 @@ package kamers;
 
 import gamelogic.Game;
 import joker.IKeyJoker;
-import usableitems.Komkommer;
+import usableitems.IUsableItem;
+import utils.ItemGiver;
 import utils.SpelerSession;
 import vragen.Vraag;
 
 public class DeDailyScrum extends Kamer implements IKeyJoker {
 
     public DeDailyScrum() {
-        super("De Daily Scrum",  new Komkommer());
+        super("De Daily Scrum",  "Daily Scrum");
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }
 
     @Override
     public void enter() {
-        SpelerSession.getSpeler().addItem(item);
-
         System.out.println("Welkom in de 2de kamer.");
         System.out.println("Deze kamer gaat over De Daily Scrum");
         if (!SpelerSession.getSpeler().isSecondItemReceived()) {
+            IUsableItem item = ItemGiver.giveRandomItem();
             System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
             System.out.println(item.getDescription());
+            SpelerSession.getSpeler().getItems().add(item);
             SpelerSession.getSpeler().setSecondItemReceived(true);
         }
         System.out.println("Beantwoord de volgende vraag:");

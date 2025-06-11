@@ -6,8 +6,8 @@ public class Zwaard extends UsableItem implements IUsableItem, IWapen{
         System.out.println("Swoosh!");
     }
 
-    public Zwaard(String name, String description) {
-        super(name, description);
+    public Zwaard() {
+        super("Zwaard", "Een zwaard dat je kan gebruiken om een monster te verslaan.");
     }
 
     public void gebruik (){

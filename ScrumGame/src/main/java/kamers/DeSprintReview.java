@@ -2,6 +2,8 @@ package kamers;
 
 import gamelogic.Game;
 import joker.IKeyJoker;
+import usableitems.IUsableItem;
+import utils.ItemGiver;
 import utils.SpelerSession;
 import vragen.Vraag;
 import usableitems.JeffDeAssistent;
@@ -9,20 +11,20 @@ import usableitems.JeffDeAssistent;
 public class DeSprintReview extends Kamer implements IKeyJoker {
 
     public DeSprintReview() {
-        super("De Sprint Review",  new JeffDeAssistent("De hint: het is niet a\nStappenplan:\n1. Lees de som: 20 + 0\n2. Herken het getal 0: 0 betekent dat je niets toevoegt\n3. Voeg 0 toe aan 20: 20 blijft hetzelfde\n4. Schrijf het antwoord op: 20 gebruik je rekenmachine!\nMotivatie quote: To be, or not to be: that is the question. -William Shakespear"));
+        super("De Sprint Review",  "Review");
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }
 
     @Override
     public void enter() {
-        SpelerSession.getSpeler().addItem(item);
-
         System.out.println("Welkom in de 4de kamer.");
         System.out.println("Deze kamer gaat over de Sprint Review");
         if (!SpelerSession.getSpeler().isFourthItemReceived()) {
+            IUsableItem item = ItemGiver.giveRandomItem();
             System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
             System.out.println(item.getDescription());
+            SpelerSession.getSpeler().getItems().add(item);
             SpelerSession.getSpeler().setFourthItemReceived(true);
         }
         System.out.println("Beantwoord de volgende vraag:");

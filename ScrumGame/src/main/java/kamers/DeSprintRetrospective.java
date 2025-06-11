@@ -1,14 +1,16 @@
 package kamers;
 
 import gamelogic.Game;
+import usableitems.IUsableItem;
 import usableitems.Komkommer;
+import utils.ItemGiver;
 import utils.SpelerSession;
 import vragen.Vraag;
 
 public class DeSprintRetrospective extends Kamer {
 
     public DeSprintRetrospective() {
-        super("De Sprint Retrospective",  new Komkommer());
+        super("De Sprint Retrospective",  "Retrospective");
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }
@@ -17,13 +19,13 @@ public class DeSprintRetrospective extends Kamer {
 
     @Override
     public void enter() {
-        SpelerSession.getSpeler().addItem(item);
-
         System.out.println("Welkom in de 5de kamer.");
         System.out.println("Deze kamer gaat over de Sprint Retrospective");
         if (!SpelerSession.getSpeler().isFifthItemReceived()) {
+            IUsableItem item = ItemGiver.giveRandomItem();
             System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
             System.out.println(item.getDescription());
+            SpelerSession.getSpeler().getItems().add(item);
             SpelerSession.getSpeler().setFifthItemReceived(true);
         }
         System.out.println("Beantwoord de volgende vraag:");
