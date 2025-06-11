@@ -17,26 +17,32 @@ public class Status implements Update {
         this.positie = positie;
         this.saveSystem = saveSystem;
     }
+
     @Override
     public void update(boolean goedOfFout) {
         if (goedOfFout) {
             score++;
-            saveSystem.saveGame(SpelerSession.getSpeler());
+            save();
             System.out.println("Je hebt een punt verdiend! Je score is nu: " + score);
         }
     }
+
     public int getScore() {
         return score;
     }
+
     public String getPositie() {
         return positie;
     }
+
     public void setPositie(String positie) {
         this.positie = positie;
     }
+
     public void setScore(int score) {
         this.score = score;
     }
+
     public void setSaveSystem(SaveSystemInterface saveSystem) {
         this.saveSystem = saveSystem;
     }
@@ -56,7 +62,11 @@ public class Status implements Update {
     public void setHuidigeVraag(Vraag huidigeVraag) {
         this.huidigeVraag = huidigeVraag;
     }
-    public void resetNaarBegin () {
+
+    public void resetNaarBegin() {
         saveSystem.reset();
+    }
+    public void save () {
+        saveSystem.saveGame(SpelerSession.getSpeler());
     }
 }

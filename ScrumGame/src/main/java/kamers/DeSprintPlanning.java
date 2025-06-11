@@ -1,27 +1,29 @@
 package kamers;
 
 import gamelogic.Game;
+import usableitems.IUsableItem;
 import usableitems.Zwaard;
+import utils.ItemGiver;
 import utils.SpelerSession;
 import vragen.Vraag;
 
 public class DeSprintPlanning extends Kamer {
 
     public DeSprintPlanning() {
-        super( "De Sprint Planning",  new Zwaard("zwaard", "Je kan het zwaard gebruiken om een monster te verslaan."));
+        super( "De Sprint Planning",  "Sprint Planning");
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }
 
     @Override
     public void enter() {
-        SpelerSession.getSpeler().addItem(item);
-
         System.out.println("Welkom in de eerste kamer.");
         System.out.println("Deze kamer gaat over De Sprint Planning");
         if (!SpelerSession.getSpeler().isFirstItemReceived()) {
+            IUsableItem item = ItemGiver.giveRandomItem();
             System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
             System.out.println(item.getDescription());
+            SpelerSession.getSpeler().getItems().add(item);
             SpelerSession.getSpeler().setFirstItemReceived(true);
         }
         System.out.println("Beanwoord de volgende vraag:");

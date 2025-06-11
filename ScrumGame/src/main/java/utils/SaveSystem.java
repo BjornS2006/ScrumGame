@@ -29,6 +29,7 @@ public class SaveSystem implements SaveSystemInterface {
                         case "KamerInforBoek" -> context.deserialize(json, KamerInforBoek.class);
                         case "KeyJoker" -> context.deserialize(json, KeyJoker.class);
                         case "HintJoker" -> context.deserialize(json, HintJoker.class);
+                        case "JeffDeAssistent" -> context.deserialize(json, usableitems.JeffDeAssistent.class);
                         default -> throw new JsonParseException("Unknown item type: " + type);
                     };
                 }
