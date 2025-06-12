@@ -1,5 +1,7 @@
 package kamers;
 
+import gamelogic.GameRoute;
+import monster.Monster;
 import usableitems.IUsableItem;
 import usableitems.Komkommer;
 import gamelogic.Game;
@@ -9,8 +11,8 @@ import vragen.Vraag;
 
 public class HetScrumBoard extends Kamer {
 
-    public HetScrumBoard() {
-        super("Het Scrum Board",  "Scrum Board");
+    public HetScrumBoard(Monster monster) {
+        super("Het Scrum Board",  "Scrum Board", monster);
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }
@@ -32,6 +34,7 @@ public class HetScrumBoard extends Kamer {
     @Override
     public void stelVraag() {
         vraagPresenter.stelVragen(vraagManager);
+        monster.checkStartChallenge();
     }
 
     public void addVraag (Vraag vraag) {
@@ -41,6 +44,8 @@ public class HetScrumBoard extends Kamer {
     @Override
     public void naarVolgendeKamer() {
         Game.maakVierdeKamerAan().speelKamer();
+        SpelerSession.getSpeler().getStatus().setPositie("De Sprint Review");
+        GameRoute.locatie();
     }
 
     @Override

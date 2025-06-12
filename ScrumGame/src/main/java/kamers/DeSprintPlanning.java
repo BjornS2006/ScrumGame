@@ -1,6 +1,8 @@
 package kamers;
 
 import gamelogic.Game;
+import gamelogic.GameRoute;
+import monster.Monster;
 import usableitems.IUsableItem;
 import usableitems.Zwaard;
 import utils.ItemGiver;
@@ -9,8 +11,8 @@ import vragen.Vraag;
 
 public class DeSprintPlanning extends Kamer {
 
-    public DeSprintPlanning() {
-        super( "De Sprint Planning",  "Sprint Planning");
+    public DeSprintPlanning(Monster monster) {
+        super( "De Sprint Planning",  "Sprint Planning", monster);
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }
@@ -32,6 +34,7 @@ public class DeSprintPlanning extends Kamer {
     @Override
     public void stelVraag() {
         vraagPresenter.stelVragen(vraagManager);
+        monster.checkStartChallenge();
     }
     public void addVraag (Vraag vraag) {
         vraagManager.addVraag(vraag);
@@ -41,6 +44,8 @@ public class DeSprintPlanning extends Kamer {
     @Override
     public void naarVolgendeKamer() {
         Game.maakTweedeKamerAan().speelKamer();
+        SpelerSession.getSpeler().getStatus().setPositie("De Daily Scrum");
+        GameRoute.locatie();
     }
 
     @Override

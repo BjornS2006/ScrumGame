@@ -1,5 +1,6 @@
 package kamers;
 
+import monster.Monster;
 import usableitems.IUsableItem;
 import vragen.Vraag;
 import utils.*;
@@ -8,8 +9,8 @@ import usableitems.JeffDeAssistent;
 public class Finale extends Kamer {
     SaveSystemInterface saveSystem;
 
-    public Finale() {
-        super("Finale", "Waarom hebben we Scrum nodig?");
+    public Finale(Monster monster) {
+        super("Finale", "Waarom hebben we Scrum nodig?", monster);
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
         this.saveSystem = new SaveSystem();
@@ -33,6 +34,7 @@ public class Finale extends Kamer {
     @Override
     public void stelVraag() {
         vraagPresenter.stelVragen(vraagManager);
+        monster.checkStartChallenge();
     }
     public void addVraag (Vraag vraag) {
         vraagManager.addVraag(vraag);

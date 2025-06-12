@@ -1,6 +1,8 @@
 package kamers;
 
 import gamelogic.Game;
+import gamelogic.GameRoute;
+import monster.Monster;
 import usableitems.IUsableItem;
 import usableitems.Komkommer;
 import utils.ItemGiver;
@@ -9,8 +11,8 @@ import vragen.Vraag;
 
 public class DeSprintRetrospective extends Kamer {
 
-    public DeSprintRetrospective() {
-        super("De Sprint Retrospective",  "Retrospective");
+    public DeSprintRetrospective(Monster monster) {
+        super("De Sprint Retrospective",  "Retrospective", monster);
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }
@@ -34,6 +36,7 @@ public class DeSprintRetrospective extends Kamer {
     @Override
     public void stelVraag() {
         vraagPresenter.stelVragen(vraagManager);
+        monster.checkStartChallenge();
     }
     public void addVraag (Vraag vraag) {
         vraagManager.addVraag(vraag);
@@ -43,6 +46,8 @@ public class DeSprintRetrospective extends Kamer {
     @Override
     public void naarVolgendeKamer() {
         Game.maakLaatsteKamerAan().speelKamer();
+        SpelerSession.getSpeler().getStatus().setPositie("De Finale");
+        GameRoute.locatie();
     }
 
     @Override
