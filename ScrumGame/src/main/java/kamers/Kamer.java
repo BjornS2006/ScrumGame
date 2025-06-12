@@ -22,7 +22,6 @@ public abstract class Kamer {
     public void speelKamer() {
         SpelerSession.getSpeler().getStatus().setActieveKamer(this);
         SpelerSession.getSpeler().setHintUsed(false);
-        System.out.println(SpelerSession.getSpeler().getStatus().getPositie());//debug line
         SpelerSession.getSpeler().getStatus().save();
         enter();
         SpelerSession.getSpeler().getStatus().save();

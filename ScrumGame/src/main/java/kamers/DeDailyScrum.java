@@ -49,7 +49,6 @@ public class DeDailyScrum extends Kamer implements IKeyJoker {
 
     @Override
     public void naarVolgendeKamer() {
-        Game.maakDerdeKamerAan().speelKamer();
         SpelerSession.getSpeler().getStatus().setPositie("Het Scrum Board");
         GameRoute.locatie();
     }

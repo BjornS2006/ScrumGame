@@ -43,7 +43,6 @@ public class DeSprintPlanning extends Kamer {
 
     @Override
     public void naarVolgendeKamer() {
-        Game.maakTweedeKamerAan().speelKamer();
         SpelerSession.getSpeler().getStatus().setPositie("De Daily Scrum");
         GameRoute.locatie();
     }

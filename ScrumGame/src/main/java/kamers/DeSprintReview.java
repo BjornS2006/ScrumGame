@@ -43,7 +43,6 @@ public class DeSprintReview extends Kamer implements IKeyJoker {
 
     @Override
     public void naarVolgendeKamer() {
-        Game.maakVijfdeKamerAan().speelKamer();
         SpelerSession.getSpeler().getStatus().setPositie("De Sprint Retrospective");
         GameRoute.locatie();
     }

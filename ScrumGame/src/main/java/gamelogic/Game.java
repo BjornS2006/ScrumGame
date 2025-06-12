@@ -86,9 +86,9 @@ public class Game {
         meerkeuzeVraag.addObserver(SpelerSession.getSpeler().getStatus());
         puzzelVraag.addObserver(monster);
         puzzelVraag.addObserver(SpelerSession.getSpeler().getStatus());
-        kamer1.addVraag(openVraag);
+       // kamer1.addVraag(openVraag);
         kamer1.addVraag(meerkeuzeVraag);
-        kamer1.addVraag(puzzelVraag);
+        //kamer1.addVraag(puzzelVraag);
 
         // Monster meerkeuzevragen voor kamer 1
         MeerkeuzeWeergave m1 = new MeerkeuzeWeergave("Wat is een belangrijk resultaat van de Sprint Planning?");

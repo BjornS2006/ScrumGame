@@ -43,7 +43,6 @@ public class HetScrumBoard extends Kamer {
 
     @Override
     public void naarVolgendeKamer() {
-        Game.maakVierdeKamerAan().speelKamer();
         SpelerSession.getSpeler().getStatus().setPositie("De Sprint Review");
         GameRoute.locatie();
     }

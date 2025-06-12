@@ -45,7 +45,6 @@ public class DeSprintRetrospective extends Kamer {
 
     @Override
     public void naarVolgendeKamer() {
-        Game.maakLaatsteKamerAan().speelKamer();
         SpelerSession.getSpeler().getStatus().setPositie("De Finale");
         GameRoute.locatie();
     }
