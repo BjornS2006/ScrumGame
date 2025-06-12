@@ -1,7 +1,9 @@
 package kamers;
 
 import gamelogic.Game;
+import gamelogic.GameRoute;
 import joker.IKeyJoker;
+import monster.Monster;
 import usableitems.IUsableItem;
 import utils.ItemGiver;
 import utils.SpelerSession;
@@ -10,8 +12,8 @@ import usableitems.JeffDeAssistent;
 
 public class DeSprintReview extends Kamer implements IKeyJoker {
 
-    public DeSprintReview() {
-        super("De Sprint Review",  "Review");
+    public DeSprintReview(Monster monster) {
+        super("De Sprint Review",  "Review", monster);
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }
@@ -33,6 +35,7 @@ public class DeSprintReview extends Kamer implements IKeyJoker {
     @Override
     public void stelVraag() {
         vraagPresenter.stelVragen(vraagManager);
+        monster.checkStartChallenge();
     }
     public void addVraag (Vraag vraag) {
         vraagManager.addVraag(vraag);
@@ -40,7 +43,8 @@ public class DeSprintReview extends Kamer implements IKeyJoker {
 
     @Override
     public void naarVolgendeKamer() {
-        Game.maakVijfdeKamerAan().speelKamer();
+        SpelerSession.getSpeler().getStatus().setPositie("De Sprint Retrospective");
+        GameRoute.locatie();
     }
 
     @Override

@@ -1,7 +1,10 @@
 package kamers;
 
 import gamelogic.Game;
+import gamelogic.GameRoute;
 import joker.IKeyJoker;
+import monster.Monster;
+import test.checkAantalFouten;
 import usableitems.IUsableItem;
 import utils.ItemGiver;
 import utils.SpelerSession;
@@ -9,8 +12,8 @@ import vragen.Vraag;
 
 public class DeDailyScrum extends Kamer implements IKeyJoker {
 
-    public DeDailyScrum() {
-        super("De Daily Scrum",  "Daily Scrum");
+    public DeDailyScrum(Monster monster) {
+        super("De Daily Scrum",  "Daily Scrum", monster);
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }
@@ -19,6 +22,11 @@ public class DeDailyScrum extends Kamer implements IKeyJoker {
     public void enter() {
         System.out.println("Welkom in de 2de kamer.");
         System.out.println("Deze kamer gaat over De Daily Scrum");
+        checkAantalFouten foutenChecker = new checkAantalFouten();
+        if (foutenChecker.check(SpelerSession.getSpeler().getAantalFoutenTest())) {
+            System.out.println("Je hebt al veel fouten dus pas op!");
+        }
+
         if (!SpelerSession.getSpeler().isSecondItemReceived()) {
             IUsableItem item = ItemGiver.giveRandomItem();
             System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
@@ -32,6 +40,7 @@ public class DeDailyScrum extends Kamer implements IKeyJoker {
     @Override
     public void stelVraag() {
        vraagPresenter.stelVragen(vraagManager);
+       monster.checkStartChallenge();
     }
 
     public void addVraag (Vraag vraag) {
@@ -40,7 +49,8 @@ public class DeDailyScrum extends Kamer implements IKeyJoker {
 
     @Override
     public void naarVolgendeKamer() {
-        Game.maakDerdeKamerAan().speelKamer();
+        SpelerSession.getSpeler().getStatus().setPositie("Het Scrum Board");
+        GameRoute.locatie();
     }
 
     @Override

@@ -1,5 +1,6 @@
 package kamers;
 
+import monster.Monster;
 import usableitems.UsableItem;
 import utils.SaveSystem;
 import utils.SpelerSession;
@@ -10,10 +11,12 @@ public abstract class Kamer {
     protected KamerVraagManager vraagManager;
     protected KamerVraagPresenter vraagPresenter;
     protected String kamerInfo;
+    protected Monster monster;
 
-    protected Kamer(String name, String kamerInfo) {
+    protected Kamer(String name, String kamerInfo, Monster monster) {
         this.naam = name;
         this.kamerInfo = kamerInfo;
+        this.monster = monster;
     }
 
     public void speelKamer() {

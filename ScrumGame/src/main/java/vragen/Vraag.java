@@ -4,6 +4,7 @@ import gamelogic.Subject;
 import gamelogic.Update;
 import hintsysteem.HelpHintProvider;
 import monster.Monster;
+import utils.SpelerSession;
 
 import java.util.ArrayList;
 
@@ -24,7 +25,11 @@ public class Vraag implements Subject {
     }
 
     public boolean controleerAntwoord() {
-        return controleStrategie.checkGoedAntwoord();
+        boolean foutOfGoed = controleStrategie.checkGoedAntwoord();
+        if (!foutOfGoed) {
+            SpelerSession.getSpeler().addFout();
+        }
+        return foutOfGoed;
     }
 
     // Overload for answer checking with input

@@ -7,10 +7,12 @@ public class Monster implements Update {
     private String naam;
     private Vraag huidigeVraag;
     private MonsterChallenge challenge;
+    private boolean isActief;
 
     public Monster(String naam, MonsterChallenge challenge) {
         this.naam = naam;
         this.challenge = challenge;
+        this.isActief = false;
     }
 
     public void setHuidigeVraag(Vraag vraag) {
@@ -28,11 +30,16 @@ public class Monster implements Update {
     @Override
     public void update(boolean goedOfFout) {
         if (!goedOfFout) {
-            challenge.startChallenge();
+            isActief = true;
         }
     }
 
     public MonsterChallenge getChallenge() {
         return challenge;
+    }
+    public void checkStartChallenge() {
+        if (isActief) {
+            challenge.startChallenge();
+        }
     }
 }

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Speler {
         private Status status;
+        private int aantalFoutenTest;
         private ArrayList <IUsableItem> items;
         private boolean jokerReceived;
         private boolean firstItemReceived;
@@ -14,7 +15,6 @@ public class Speler {
         private boolean fifthItemReceived;
         private boolean sixthItemReceived;
         private boolean hintUsed;
-
 
     public Speler(Status status) {
         this.status = status;
@@ -52,6 +52,19 @@ public class Speler {
             ensureItemsInitialized();
             items.add(item);
         }
+
+        public void addFout(){
+        aantalFoutenTest += 1;
+        }
+
+        public int getAantalFoutenTest() {
+            return aantalFoutenTest;
+        }
+
+        public void setAantalFoutenTest(int i) {
+            aantalFoutenTest = i;
+        }
+
 
         @Override
         public String toString() {
