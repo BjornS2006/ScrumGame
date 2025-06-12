@@ -14,6 +14,11 @@ public class Game {
         MonsterChallenge challenge = new MonsterChallenge("Jon");
         Monster monster = new Monster("Jon", challenge);
 
+        OpenWeergave openWeergave = new OpenWeergave("Wat voor soort spel spelen scrum teams bij de sprint planning?");
+        OpenControle openControle = new OpenControle("Planning Poker");
+        HelpHintProvider openHelpHintProvider = new HelpHintProvider("Het is een spel dat helpt bij het inschatten van werk.");
+        Vraag openVraag = new Vraag(openWeergave, openControle, monster, openHelpHintProvider);
+
         MeerkeuzeWeergave weergave = new MeerkeuzeWeergave("Wat is 90 plus 3?");
         weergave.addAntwoord("A: 5");
         weergave.addAntwoord("B: 38");
@@ -47,6 +52,9 @@ public class Game {
 
         vraag.addObserver(monster);
         vraag.addObserver(SpelerSession.getSpeler().getStatus());
+        openVraag.addObserver(monster);
+        openVraag.addObserver(SpelerSession.getSpeler().getStatus());
+        kamer1.addVraag(openVraag);
         kamer1.addVraag(vraag);
         SpelerSession.getSpeler().getStatus().setPositie("De Sprint Planning");
 

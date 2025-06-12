@@ -14,8 +14,6 @@ public class PuzzelWeergave implements VraagWeergaveStrategie{
     public void toonVraag() {
         System.out.println("Match de begrippen met de juiste betekenis:");
 
-        // Randomize de betekenissen om het lastiger te maken
-        Collections.shuffle(tweedeMatchItems);
 
         // Print opties
         for (int i = 0; i < matchItems.size(); i++) {
