@@ -2,15 +2,12 @@ package jokertest;
 
 import kamers.Kamer;
 import joker.IKeyJoker;
-import monster.Monster;
-import vragen.Vraag;
 
-public class KamerStub extends Kamer implements IKeyJoker {
+public class DeDailyScrumStub extends Kamer implements IKeyJoker {
     public boolean skipRoomCalled = false;
-    private String type;
 
-    public KamerStub() {
-        super("StubKamer", "StubInfo", null);
+    public DeDailyScrumStub() {
+        super("De Daily Scrum", "Daily Scrum", null);
     }
 
     @Override
@@ -19,9 +16,6 @@ public class KamerStub extends Kamer implements IKeyJoker {
     @Override
     public void stelVraag() {}
 
-    public void setType(String type) {
-        this.type = type;
-    }
     @Override
     public void naarVolgendeKamer() {}
 
