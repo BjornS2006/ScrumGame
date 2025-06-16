@@ -28,7 +28,6 @@ public class Finale extends Kamer {
             SpelerSession.getSpeler().getItems().add(item);
             SpelerSession.getSpeler().setSixthItemReceived(true);
         }
-        System.out.println("Beantwoord de volgende vraag:");
     }
 
     @Override

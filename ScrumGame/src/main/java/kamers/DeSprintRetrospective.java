@@ -30,7 +30,6 @@ public class DeSprintRetrospective extends Kamer {
             SpelerSession.getSpeler().getItems().add(item);
             SpelerSession.getSpeler().setFifthItemReceived(true);
         }
-        System.out.println("Beantwoord de volgende vraag:");
     }
 
     @Override

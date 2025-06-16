@@ -28,7 +28,6 @@ public class HetScrumBoard extends Kamer {
             SpelerSession.getSpeler().getItems().add(item);
             SpelerSession.getSpeler().setThirdItemReceived(true);
         }
-        System.out.println("Beantwoord de volgende vraag:");
     }
 
     @Override

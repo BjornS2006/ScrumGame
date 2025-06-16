@@ -29,7 +29,6 @@ public class DeSprintReview extends Kamer implements IKeyJoker {
             SpelerSession.getSpeler().getItems().add(item);
             SpelerSession.getSpeler().setFourthItemReceived(true);
         }
-        System.out.println("Beantwoord de volgende vraag:");
     }
 
     @Override

@@ -26,8 +26,8 @@ public class Game {
 
     public static Kamer maakEersteKamerAan() {
         verhoogKamerNummer();
-        MonsterChallenge challenge = new MonsterChallenge("Jon");
-        Monster monster = new Monster("Jon", challenge);
+        MonsterChallenge challenge = new MonsterChallenge("scope creep");
+        Monster monster = new Monster("scope creep", challenge);
         DeSprintPlanning kamer1 = new DeSprintPlanning(monster);
         // Open vraag - Sprint Planning
         OpenWeergave openWeergave = new OpenWeergave("Hoe heet het spel dat teamleden helpt bij het plannen van hun werk in een sprint?");
@@ -114,8 +114,8 @@ public class Game {
 
     public static Kamer maakTweedeKamerAan() {
         verhoogKamerNummer();
-        MonsterChallenge challenge = new MonsterChallenge("Mohammed");
-        Monster monster = new Monster("Mohammed", challenge);
+        MonsterChallenge challenge = new MonsterChallenge("Stand up Snoozer");
+        Monster monster = new Monster("Stand up Snoozer", challenge);
         DeDailyScrum kamer2 = new DeDailyScrum(monster);
 
         // Open vraag - Daily Scrum
@@ -203,8 +203,8 @@ public class Game {
 
     public static Kamer maakDerdeKamerAan() {
         verhoogKamerNummer();
-        MonsterChallenge challenge = new MonsterChallenge("Ahmad");
-        Monster monster = new Monster("Ahmad", challenge);
+        MonsterChallenge challenge = new MonsterChallenge("Sticky note Chaos");
+        Monster monster = new Monster("Sticky note Chaos", challenge);
         HetScrumBoard kamer3 = new HetScrumBoard(monster);
 
         // Open vraag - Scrum Board
@@ -292,8 +292,8 @@ public class Game {
 
     public static Kamer maakVierdeKamerAan() {
         verhoogKamerNummer();
-        MonsterChallenge challenge = new MonsterChallenge("Marcel");
-        Monster monster = new Monster("Marcel", challenge);
+        MonsterChallenge challenge = new MonsterChallenge("Feedback Phantom");
+        Monster monster = new Monster("Feedback Phantom", challenge);
         DeSprintReview kamer4 = new DeSprintReview(monster);
 
         // Open vraag - Sprint Review
@@ -381,8 +381,8 @@ public class Game {
 
     public static Kamer maakVijfdeKamerAan() {
         verhoogKamerNummer();
-        MonsterChallenge challenge = new MonsterChallenge("Fatima");
-        Monster monster = new Monster("Fatima", challenge);
+        MonsterChallenge challenge = new MonsterChallenge("Blame Shifter");
+        Monster monster = new Monster("Blame Shifter", challenge);
         DeSprintRetrospective kamer5 = new DeSprintRetrospective(monster);
 
         // Open vraag - Sprint Retrospective
@@ -470,8 +470,8 @@ public class Game {
 
     public static Kamer maakLaatsteKamerAan() {
         verhoogKamerNummer();
-        MonsterChallenge challenge = new MonsterChallenge("Eindbaas");
-        Monster monster = new Monster("Eindbaas", challenge);
+        MonsterChallenge challenge = new MonsterChallenge("Waterfall Wraith");
+        Monster monster = new Monster("Waterfall Wraith", challenge);
         Finale kamer6 = new Finale(monster);
 
         // Open vraag - Waarom Scrum?

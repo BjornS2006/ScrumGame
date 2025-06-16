@@ -25,6 +25,9 @@ public class Status implements Update {
             save();
             System.out.println("Je hebt een punt verdiend! Je score is nu: " + score);
         }
+        else {
+            System.out.println("Je hoort het geluid van een monster ergens in de kamer...");
+        }
     }
 
     public int getScore() {

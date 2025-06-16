@@ -28,7 +28,6 @@ public class DeSprintPlanning extends Kamer {
             SpelerSession.getSpeler().getItems().add(item);
             SpelerSession.getSpeler().setFirstItemReceived(true);
         }
-        System.out.println("Beanwoord de volgende vraag:");
     }
 
     @Override
