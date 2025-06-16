@@ -7,7 +7,7 @@ class MonsterMock implements gamelogic.Update {
     public void update(boolean goedOfFout) {
         updateCalled = true;
         laatsteResultaat = goedOfFout;
-        System.out.println("[Mock] Monster update aangeroepen met: " + goedOfFout);
+        System.out.println("Mock Monster update aangeroepen met: " + goedOfFout);
     }
 }
 
