@@ -1,6 +1,5 @@
 package usableitems;
 
-import utils.SpelerSession;
 import java.util.List;
 import java.util.Arrays;
 import java.util.Random;
@@ -27,7 +26,11 @@ public class JeffDeAssistent extends UsableItem implements IInformatie {
     public void showInfo() {
         System.out.println("Jeff zegt:");
         System.out.println("Hier is en hint die je misschien kan helpen!: " + ALGEMENE_HINTS.get(RANDOM.nextInt(ALGEMENE_HINTS.size())));
-        System.out.println("Hier is wat informatie over de huidige kamer!: " + SpelerSession.getSpeler().getStatus().getActieveKamer().getKamerInfo());
+        System.out.println("Hier is een stappenplan dat je kan volgen:");
+        System.out.println("1. Lees de vraag aandachtig door.");
+        System.out.println("2. Denk na over wat je al weet over het onderwerp.");
+        System.out.println("3. Probeer de vraag te koppelen aan de informatie die je hebt.");
+        System.out.println("4. Controleer je antwoord voordat je het indient.");
         System.out.println("Hier is een motiverend bericht!: " + MOTIVATIE_BERICHTEN.get(RANDOM.nextInt(MOTIVATIE_BERICHTEN.size())));
     }
 
