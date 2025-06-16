@@ -33,7 +33,7 @@ public abstract class JokerBase implements IUsableItem {
         handleJokerUsage();
     }
 
-    public final void useIn(Kamer kamer) {
+    public void useIn(Kamer kamer) {
         if (isUsed()) {
             System.out.println("Je hebt de " + getName() + " al gebruikt.");
             return;
