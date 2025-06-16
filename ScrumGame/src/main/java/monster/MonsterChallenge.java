@@ -2,6 +2,8 @@ package monster;
 
 import usableitems.IUsableItem;
 
+import utils.SaveSystem;
+import utils.SaveSystemInterface;
 import utils.SpelerInputHandler;
 import utils.SpelerSession;
 import vragen.Vraag;
@@ -13,11 +15,13 @@ public class MonsterChallenge {
     private MonsterVerschijning monsterVerschijning;
     private MonsterVraagBeheer vraagBeheer;
     private HitMonster hitMonster;
+    SaveSystemInterface saveSystem;
 
     public MonsterChallenge(String monsterNaam) {
         monsterVerschijning = new MonsterVerschijning(monsterNaam);
         vraagBeheer = new MonsterVraagBeheer();
         hitMonster = new HitMonster();
+        this.saveSystem = new SaveSystem();
     }
 
     public void startChallenge() {
@@ -71,6 +75,7 @@ public class MonsterChallenge {
                     if (incorrectAnswerCount == 2) {
                         System.out.println("Fout! Je hebt het monster niet kunnen verslaan. Je bent verslagen en wordt terug naar het begin gestuurd!");
                         SpelerSession.getSpeler().getStatus().resetNaarBegin();
+                        saveSystem.reset();
                         System.exit(0);
                         return;
                     } else {

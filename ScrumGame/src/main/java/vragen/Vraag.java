@@ -28,6 +28,7 @@ public class Vraag implements Subject {
         boolean foutOfGoed = controleStrategie.checkGoedAntwoord();
         if (!foutOfGoed) {
             SpelerSession.getSpeler().addFout();
+            System.out.println("je antwoord is fout! u heeft veel geluid gemaakt en de monster is nu actief.");
         }
         return foutOfGoed;
     }
