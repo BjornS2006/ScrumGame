@@ -12,7 +12,7 @@ import vragen.Vraag;
 public class HetScrumBoard extends Kamer {
 
     public HetScrumBoard(Monster monster) {
-        super("Het Scrum Board",  "Scrum Board", monster);
+        super("Het Scrum Board",  "Scrum Board: Het Scrum Board is een visueel hulpmiddel waarop het team taken bijhoudt. Het toont de status van werkitems, zoals 'To Do', 'In Progress' en 'Done', en bevordert transparantie en samenwerking.", monster);
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }
@@ -47,4 +47,3 @@ public class HetScrumBoard extends Kamer {
     public void showJokerHint() {
         System.out.println("Hint: Het Scrum Board is een hulpmiddel voor teams om hun werk te organiseren en te visualiseren.");}
 }
-

@@ -10,7 +10,7 @@ public class Finale extends Kamer {
     SaveSystemInterface saveSystem;
 
     public Finale(Monster monster) {
-        super("Finale", "Waarom hebben we Scrum nodig?", monster);
+        super("Finale", "Finale: In deze kamer ontdek je waarom Scrum belangrijk is. Scrum helpt teams om flexibel te werken, snel in te spelen op veranderingen en samen te werken aan waardevolle resultaten.", monster);
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
         this.saveSystem = new SaveSystem();

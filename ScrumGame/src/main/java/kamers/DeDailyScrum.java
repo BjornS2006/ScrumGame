@@ -13,7 +13,7 @@ import vragen.Vraag;
 public class DeDailyScrum extends Kamer implements IKeyJoker {
 
     public DeDailyScrum(Monster monster) {
-        super("De Daily Scrum",  "Daily Scrum", monster);
+        super("De Daily Scrum",  "Daily Scrum: De Daily Scrum is een korte dagelijkse bijeenkomst van maximaal 15 minuten waarin teamleden hun voortgang bespreken, plannen maken voor de dag en eventuele obstakels delen.", monster);
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }

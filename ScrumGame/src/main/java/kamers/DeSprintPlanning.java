@@ -12,7 +12,7 @@ import vragen.Vraag;
 public class DeSprintPlanning extends Kamer {
 
     public DeSprintPlanning(Monster monster) {
-        super( "De Sprint Planning",  "Sprint Planning", monster);
+        super( "De Sprint Planning",  "Sprint Planning: Tijdens de Sprint Planning bepaalt het team samen met de Product Owner welk werk in de komende sprint wordt opgepakt. Het doel is om een duidelijk sprintdoel en een sprint backlog te formuleren.", monster);
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }

@@ -12,7 +12,7 @@ import vragen.Vraag;
 public class DeSprintRetrospective extends Kamer {
 
     public DeSprintRetrospective(Monster monster) {
-        super("De Sprint Retrospective",  "Retrospective", monster);
+        super("De Sprint Retrospective",  "Sprint Retrospective: Tijdens de Sprint Retrospective reflecteert het team op het proces en samenwerking. Het doel is om verbeterpunten te identificeren en acties af te spreken voor de volgende sprint.", monster);
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }

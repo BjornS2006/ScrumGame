@@ -13,7 +13,7 @@ import usableitems.JeffDeAssistent;
 public class DeSprintReview extends Kamer implements IKeyJoker {
 
     public DeSprintReview(Monster monster) {
-        super("De Sprint Review",  "Review", monster);
+        super("De Sprint Review",  "Sprint Review: Tijdens de Sprint Review presenteert het team het opgeleverde werk aan stakeholders. Het doel is om feedback te verzamelen en samen te bepalen wat de volgende stappen zijn.", monster);
         vraagManager = new KamerVraagManager();
         vraagPresenter = new KamerVraagPresenter();
     }
