@@ -28,10 +28,7 @@ public class DeDailyScrum extends Kamer implements IKeyJoker {
         }
 
         if (!SpelerSession.getSpeler().isSecondItemReceived()) {
-            IUsableItem item = ItemGiver.giveRandomItem();
-            System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
-            System.out.println(item.getDescription());
-            SpelerSession.getSpeler().getItems().add(item);
+            beginSpel();
             SpelerSession.getSpeler().setSecondItemReceived(true);
         }
     }

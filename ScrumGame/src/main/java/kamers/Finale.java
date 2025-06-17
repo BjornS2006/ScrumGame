@@ -22,10 +22,7 @@ public class Finale extends Kamer {
         System.out.println("Welkom in la grande finale.\uD83D\uDC12");
         System.out.println("Deze kamer gaat over waarom hebben we scrum nodig?");
         if (!SpelerSession.getSpeler().isSixthItemReceived()) {
-            IUsableItem item = ItemGiver.giveRandomItem();
-            System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
-            System.out.println(item.getDescription());
-            SpelerSession.getSpeler().getItems().add(item);
+            beginSpel();
             SpelerSession.getSpeler().setSixthItemReceived(true);
         }
     }

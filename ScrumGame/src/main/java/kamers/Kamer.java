@@ -1,7 +1,9 @@
 package kamers;
 
 import monster.Monster;
+import usableitems.IUsableItem;
 import usableitems.UsableItem;
+import utils.ItemGiver;
 import utils.SaveSystem;
 import utils.SpelerSession;
 
@@ -37,4 +39,11 @@ public abstract class Kamer {
     public String getKamerInfo() {
         return kamerInfo;
     }
+    public void beginSpel (){
+        IUsableItem item = ItemGiver.giveRandomItem();
+        System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
+        System.out.println(item.getDescription());
+        SpelerSession.getSpeler().getItems().add(item);
+    }
+
 }

@@ -23,10 +23,7 @@ public class DeSprintReview extends Kamer implements IKeyJoker {
         System.out.println("Welkom in de 4de kamer.");
         System.out.println("Deze kamer gaat over de Sprint Review");
         if (!SpelerSession.getSpeler().isFourthItemReceived()) {
-            IUsableItem item = ItemGiver.giveRandomItem();
-            System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
-            System.out.println(item.getDescription());
-            SpelerSession.getSpeler().getItems().add(item);
+            beginSpel();
             SpelerSession.getSpeler().setFourthItemReceived(true);
         }
     }

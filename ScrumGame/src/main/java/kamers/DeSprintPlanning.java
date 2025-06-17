@@ -22,10 +22,7 @@ public class DeSprintPlanning extends Kamer {
         System.out.println("Welkom in de eerste kamer.");
         System.out.println("Deze kamer gaat over De Sprint Planning");
         if (!SpelerSession.getSpeler().isFirstItemReceived()) {
-            IUsableItem item = ItemGiver.giveRandomItem();
-            System.out.println("Gefeliciteerd!!! Je hebt een: " + item.getName() + " gekregen.");
-            System.out.println(item.getDescription());
-            SpelerSession.getSpeler().getItems().add(item);
+            beginSpel();
             SpelerSession.getSpeler().setFirstItemReceived(true);
         }
     }
