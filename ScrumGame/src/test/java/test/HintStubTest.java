@@ -6,7 +6,7 @@ class HelpHintProviderStub extends hintsysteem.HelpHintProvider {
     @Override
     public void geefHint() {
         hintGevraagd = true;
-        System.out.println("[Stub] Stub hint gegeven.");
+        System.out.println("Stub Stub hint gegeven.");
     }
 }
 

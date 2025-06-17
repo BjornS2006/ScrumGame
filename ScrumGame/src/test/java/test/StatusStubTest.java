@@ -5,7 +5,7 @@ class SaveSystemStub implements utils.SaveSystemInterface {
     @Override
     public void saveGame(gamelogic.Speler speler) {
         saveCalled = true;
-        System.out.println("[Stub] SaveGame aangeroepen.");
+        System.out.println("Stub SaveGame aangeroepen.");
     }
     @Override
     public gamelogic.Speler loadGame() { return null; }
@@ -17,7 +17,7 @@ public class StatusStubTest {
     public static void main(String[] args) {
         SaveSystemStub stub = new SaveSystemStub();
         gamelogic.Status status = new gamelogic.Status(0, "Start", stub);
-        status.update(true); // zou saveGame moeten aanroepen
+        status.update(true);
         if (stub.saveCalled) {
             System.out.println("✅ StubTest geslaagd: saveGame werd aangeroepen.");
         } else {

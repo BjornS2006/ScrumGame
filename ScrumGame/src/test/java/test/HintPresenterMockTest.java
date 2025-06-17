@@ -6,7 +6,7 @@ class HintProviderMock extends hintsysteem.HelpHintProvider {
     @Override
     public void geefHint() {
         hintCalled = true;
-        System.out.println("[Mock] Hint is opgevraagd!");
+        System.out.println("Mock Hint is opgevraagd!");
     }
 }
 
