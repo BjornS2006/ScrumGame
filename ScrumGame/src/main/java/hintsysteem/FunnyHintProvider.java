@@ -9,10 +9,10 @@ public class FunnyHintProvider implements HintProvider {
 
     public FunnyHintProvider() {
         mogelijkeFunnyHints = new ArrayList<>();
-        mogelijkeFunnyHints.add("");
-        mogelijkeFunnyHints.add("gfgposifgois");
-        mogelijkeFunnyHints.add("hhhh");
-        mogelijkeFunnyHints.add("zoek");
+        mogelijkeFunnyHints.add("Doe anders een gokje");
+        mogelijkeFunnyHints.add("Zelfs met een hint gaat het je toch niet lukken");
+        mogelijkeFunnyHints.add("Kies gewoon het eerste antwoord wat naar boven komt");
+        mogelijkeFunnyHints.add("Zoek het uit");
     }
 
     @Override
